@@ -22,11 +22,17 @@
     border: #1e90ff solid thin;
 }
 
+img.title-logo {
+    width: 400px;
+    max-width: 100%;
+}
+
 /* スマホ用 */
 @media screen and (max-width: 767px) {
 	.fb-container {
 		width: 100%;
 	}
+
 }
  
 /* PC用 */
@@ -39,3 +45,4 @@
 #news > article {
     border-bottom: 1px solid gray;
 }
+
