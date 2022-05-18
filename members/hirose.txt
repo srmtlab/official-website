@@ -1,0 +1,11 @@
+               <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6">
+                            <div class="member-style">
+                                <img src="./img/member/hirose.jpg" class="img-responsive">
+                                <b廣瀬 伸行<br>
+                               （廣瀬先生からひとこと）
+                            </div>
+                        </div>
+                    </div>
+                </div>
