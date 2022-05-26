@@ -1,0 +1,11 @@
+               <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6">
+                            <div class="member-style">
+                                <img src="./img/member/siramatu2016.png" class="img-responsive">
+                                <br>教授<br><a href="http://www.srmt.nitech.ac.jp/~siramatu/">白松 俊</a><br>
+                               息子が7歳になりました。時の流れは速いです
+                            </div>
+                        </div>
+                    </div>
+                </div>

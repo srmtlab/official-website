@@ -1,0 +1,11 @@
+<div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6">
+                            <div class="member-style">
+                                <img src="./img/member/hashimoto.png" class="img-responsive">
+                                <br>情報工学科<br><a href="http://www.srmt.nitech.ac.jp/~siramatu/">橋本 慧海</a><br>
+                               将来の夢はノマドワーカー
+                            </div>
+                        </div>
+                    </div>
+                </div>
