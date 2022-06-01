@@ -2,7 +2,7 @@
                     <div class="row">
                         <div class="col-md-3 col-sm-6">
                             <div class="member-style">
-                                <img src="./img/member/Ohira.jpg" class="img-responsive">
+                                <img src="./img/member/Ohira.png" class="img-responsive">
                                 <br>情報工学科<br><a href="http://www.srmt.nitech.ac.jp/~siramatu/">大平 盛斗</a><br>
                                よろしくお願いします
                             </div>
