@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JSAI2022.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h2 id="jsai2022-%E5%8F%82%E5%8A%A0%E5%A0%B1%E5%91%8A%E7%9F%B3%E5%A1%9A%E6%9D%BE%E6%9C%AC%E6%9C%AB%E6%B0%B8%E5%9D%82%E4%BA%95%E6%A9%8B%E6%9C%AC">JSAI2022 参加報告（石塚、松本、末永、坂井、橋本）</h2>
+<p>こんにちは！白松研究室の、石塚、松本、末永、坂井、橋本です！
+<br>
+<br>
+6月14日（火）～17日（金）にかけ開催された第36回人工知能学会全国大会に石塚、松本が発表者、末永、坂井、橋本が聴講者として参加をしてきたので、その報告をさせていただきます。石塚、松本の個々の発表報告については以下の記事を参考にしていただければと思います。</p>
+<h2 id="%E6%B0%97%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9F%E7%A0%94%E7%A9%B6">気になった研究</h2>
+<p>ここでは、各自が気になった研究を1つずつ紹介させていただきます。</p>
+<h3 id="%E7%9F%B3%E5%A1%9A%E3%81%8C%E6%B0%97%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9F%E7%A0%94%E7%A9%B6">石塚が気になった研究</h3>
+<h4 id="1h4-os-17a-03-vision-transformer-%E3%81%A8-bert-%E3%82%92%E7%94%A8%E3%81%84%E3%81%9F%E6%BC%AB%E7%94%BB%E3%81%AE%E3%83%9E%E3%83%AB%E3%83%81%E3%83%A2%E3%83%BC%E3%83%80%E3%83%AB%E8%AD%98%E5%88%A5%E9%9D%92%E6%9C%A8-%E5%B0%9A%E4%BA%BA%E6%A3%AE-%E7%9B%B4%E6%A8%B9%E5%B2%A1%E7%94%B0-%E7%9C%9F%E5%A4%A7%E9%98%AA%E5%BA%9C%E7%AB%8B%E5%A4%A7%E5%AD%A6">[1H4-OS-17a-03] Vision Transformer と BERT を用いた漫画のマルチモーダル識別:青木 尚人、森 直樹、岡田 真(大阪府立大学)</h4>
+<p>近年、深層学習の発展を背景として、人工知能による漫画や小説、音楽、イラストなどの人間の創作物の理解は自動生成といった分野の研究が盛んにおこなわれています。しかし、創作の理解や生成は高次の知的作業であり計算機としての理解は依然として困難な課題とされています。
+そこでこの研究は、マルチモーダルな創作物である漫画における、画像と自然言語を結び付けて人工知能に理解させることを目的として行われています。
+<br>
+<br>
+具体的にはVision Transformer(Vit)で漫画の画像の分散表現を、BERTで漫画のセリフの分散表現を獲得し、得られたそれぞれの分散表現をEarly FusionもしくはLate Fusionで結合し漫画の作品識別を行っていました。また結果としてこの研究の自然言語と画像を組み合わせた提案手法がVitとBERTのそれぞれ単体の精度を上回る結果を出していました。
+<br>
+<br>
+私を含め白松研究室では自然言語に関連する研究を行ってる人は多いですが、画像に関する研究を行ってる人はあまりいないため、画像処理に関する研究にはあまり触れる機会がなく、自然言語と画像は別のものとして考えていました。しかしこの研究では、自然言語と画像処理をうまく組み合わせてタスクを行っていて、こんなやり方もあるのかと勉強になり、非常に面白かったです。また今後この研究の様な画像と自然言語をマルチモーダルに用いた研究が発展することで、今よりも人間に近いAIが登場しそうだなと感じました。</p>
+<h3 id="%E6%9D%BE%E6%9C%AC%E3%81%8C%E6%B0%97%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9F%E7%A0%94%E7%A9%B6">松本が気になった研究</h3>
+<h4 id="1l5-ks-12-%E4%BA%BA%E3%82%92%E5%AD%A4%E7%8B%AC%E3%81%8B%E3%82%89%E6%95%91%E3%81%86ai">[1L5-KS-12] 人を孤独から救うAI</h4>
+<p>https://confit.atlas.jp/guide/event/jsai2022/subject/1L5-KS-12-01/tables</p>
+<p>このセッションは、少子高齢化の加速による独居高齢者の増加による孤独/孤立の問題と、それに対するAI技術や社会の取組による対策に関する企画セッションでした。<br>
+セッションの中では特に、地域活動へのマッチングプラットフォーム「GBER」(http://gber.jp/ )についての内容が気になりました。<br>
+GBERは高齢者を「不均一で多様性に富む労働者」であると位置づけ、柔軟な方法で地域活動や仕事などと高齢者を結びつけることで社会参画の機会を創造するプラットフォームです。<br>
+個人としては、高齢者でなくても人々には多様性があり、就労に求めることや制約も様々であるので、高齢者支援以外の分野でも役に立ちうるのではないかということも考えました。</p>
+<h3 id="%E5%9D%82%E4%BA%95%E3%81%8C%E6%B0%97%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9F%E7%A0%94%E7%A9%B6">坂井が気になった研究</h3>
+<h4 id="%E3%82%AD%E3%83%A3%E3%83%A9%E3%82%AF%E3%82%BF%E3%83%BCai%E3%81%AE%E6%88%90%E9%95%B7%E3%81%A8%E5%AD%A6%E7%BF%92%E3%81%AE%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3boeda-gautier%E4%B8%89%E5%AE%85-%E9%99%BD%E4%B8%80%E9%83%8E%E5%9D%82%E7%94%B0-%E6%96%B0%E5%B9%B3martins-gustavo%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE%E3%82%B9%E3%82%AF%E3%82%A6%E3%82%A7%E3%82%A2%E3%83%BB%E3%82%A8%E3%83%8B%E3%83%83%E3%82%AF%E3%82%B9">キャラクターAIの成長と学習のアーキテクチャBOEDA GAUTIER、三宅 陽一郎、坂田 新平、MARTINS GUSTAVO(株式会社スクウェア・エニックス)</h4>
+<p>近年のゲーム作品は、技術の進化がすごく、キャラクターのプレイできる幅の増加や、クオリティの上昇などを感じます。</p>
+<p>この研究は、そんなキャラクターをプレイヤーがコントロールできず、キャラクターの人口AIを成長させていこうという研究です。</p>
+<p>これまでの、NPCなどにAIを導入し学習させるゲームではなく、本来動かすはずの
+キャラクター自身にAIを導入し、学習させて動かさせる部分に発想の面白さを感じました。</p>
+<p>キャラクターは最初アイテムの使い方を知らず、知識によって推測（選択）を行います。
+その選択した行為を叱ったり、褒めたりすることでキャラクターに学習をさせます。
+このように知識の継承システムを築きます。すると、未知のアイテムを入手したときに、今まで覚えたアイテムとの
+類似度（形や色など）から計算して、行動を行います。</p>
+<p>自分はゲームというものは、キャラクターを動かすことが当たり前と考えていました。しかし、
+この研究から、自分が育てたキャラクターを途中から自動にできたりすることで、ゲームのストーリーの変化が生まれ
+新たなジャンルのゲームが生まれてくるのではないかと考えています。</p>
+<h3 id="%E6%9C%AB%E6%B0%B8%E3%81%8C%E6%B0%97%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9F%E7%A0%94%E7%A9%B6">末永が気になった研究</h3>
+<h4 id="%E5%AF%BE%E8%A9%B1%E5%8F%82%E5%8A%A0%E8%80%85%E3%81%AE%E7%A9%8D%E6%A5%B5%E6%80%A7%E3%81%A8%E5%BD%B1%E9%9F%BF%E5%BA%A6%E3%81%AB%E5%9F%BA%E3%81%A5%E3%81%8F%E4%B8%BB%E8%A6%B3%E8%A9%95%E4%BE%A1%E6%8E%A8%E5%AE%9A%E6%8A%80%E8%A1%93%E5%B1%B1%E5%8F%A3-%E5%A4%A7%E5%9C%B0%E5%A4%A7%E9%98%AA%E5%A4%A7%E5%AD%A6%E5%A4%A7%E5%AD%A6%E9%99%A2-%E6%83%85%E5%A0%B1%E7%A7%91%E5%AD%A6%E7%A0%94%E7%A9%B6%E7%A7%91%E5%BE%B3%E6%B0%B8-%E9%99%BD%E5%AD%90%E6%88%B8%E5%B6%8B-%E5%B7%8C%E6%A8%B9%E5%B0%8F%E6%BE%A4-%E5%8F%B2%E6%9C%97%E4%B8%AD%E6%9D%91-%E9%AB%98%E9%9B%84%E6%97%A5%E6%9C%AC%E9%9B%BB%E4%BF%A1%E9%9B%BB%E8%A9%B1%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE-%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E3%83%84%E3%82%A4%E3%83%B3%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E7%A0%94%E7%A9%B6%E3%82%BB%E3%83%B3%E3%82%BF">対話参加者の積極性と影響度に基づく主観評価推定技術：山口 大地(大阪大学大学院 情報科学研究科)、徳永 陽子、戸嶋 巌樹、小澤 史朗、中村 高雄(日本電信電話株式会社 デジタルツインコンピューティング研究センタ)</h4>
+<p>議論における合意形成では、成果物による評価だけでなく、メンバー間の関係性による影響も考えられるため、参加者の満足度も重要な指標となる。満足度が高い人は議論に積極的に参加できただろうと仮定し、積極性と影響度の２つに着目し主観評価を推定していた。積極性は発話量や自発的な発話の程度によってはかられ、影響度は各発話が合意結果に与えた影響であった。
+「旅行サービスプランの作成」というテーマで、①自分の経験の共有②アイデアだし③提案書作成という３つのフェーズからなる対話で、実験を行ったところ、</p>
+<ul>
+<li>対話のフェーズによって参加者がどのような気持ちや気づきを得られたかが変化していく</li>
+<li>さらにフェーズによってそれを決める要因が変化する
+<ul>
+<li>例えば、アイデア出しでの影響度は採用されたアイデアの発話しか説明できない</li>
+</ul>
+</li>
+<li>また、参加者の性格（協調性、外向性）を考慮すると主観評価の推定が向上する</li>
+</ul>
+<p>という結果が得られた。
+この実験で自分が興味を持ったのは、参加者の性格特性によって傾向が違う点を説明していた点であった。積極性の特徴量は、外向性・誠実性の傾向が高い人に対して有効な特徴量であった。参加者の性格の傾向を踏まえた議論を行うように支援を行うと、各参加者の発話量を調整したり、弱い意見の議論を深めるように工夫できる可能性があるかもしれないと思った。</p>
+<h3 id="%E6%A9%8B%E6%9C%AC%E3%81%8C%E6%B0%97%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9F%E7%A0%94%E7%A9%B61">橋本が気になった研究1</h3>
+<h4 id="web%E8%AD%B0%E8%AB%96%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E5%AF%BE%E7%AB%8B%E6%84%8F%E8%A6%8B%E3%81%AE%E6%AD%A2%E6%8F%9A%E3%82%92%E4%BF%83%E9%80%B2%E3%81%99%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AE%E6%84%8F%E8%A6%8B%E3%81%AE%E5%81%8F%E3%82%8A%E8%A7%A3%E6%B6%88%E6%89%8B%E6%B3%95%E3%81%AE%E8%A9%A6%E4%BD%9C%E7%9F%B3%E5%A1%9A%E5%85%891%E7%99%BD%E6%9D%BE%E4%BF%8A1%E5%B0%8F%E9%87%8E%E6%81%B5%E5%AD%902-1-%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B7%A5%E6%A5%AD%E5%A4%A7%E5%AD%A62-%E5%9B%BD%E9%9A%9B%E5%9F%BA%E7%9D%A3%E6%95%99%E5%A4%A7%E5%AD%A6">Web議論における対立意見の止揚を促進するための意見の偏り解消手法の試作：石塚光1、白松俊1、小野恵子2 (1. 名古屋工業大学、2. 国際基督教大学)</h4>
+<p>石塚さんの研究はいつもゼミで見ていたが、その結果を見ることができて面白かった。止揚について、3つのモデルの説明とその結果の報告も分かりやすかった。<br>
+自分も部活に属しているため、意見の対立がよく起きる。そのときどちらかの意見を採用するか、もしくは妥協案を採用してしまいがちだ。<br>
+ネット文章の賛否を分別することが、1文では上手くいかなかったとのこと。文章全体では不可能で、1文では上手くいかないのならばどうすればいいのか、私の研究対象にもなりそうで興味がわいた。<br>
+１つ疑問に思ったことは、ジンテーゼが採用されたときに誰が指揮を執るのかだ。多数派、少数派のどちらもが納得する案ではあるが、結局のところ誰も責任を取りたがらず、指揮を出さないように思えた。</p>
+<h3 id="%E6%A9%8B%E6%9C%AC%E3%81%8C%E6%B0%97%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9F%E7%A0%94%E7%A9%B62">橋本が気になった研究2</h3>
+<h4 id="%E7%B5%84%E7%B9%94%E3%81%AE%E4%BA%BA%E4%BA%8B%E8%A9%95%E4%BE%A1%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8Bai%E3%83%95%E3%82%A3%E3%83%BC%E3%83%89%E3%83%90%E3%83%83%E3%82%AF%E3%81%A8%E5%80%8B%E5%88%A5%E7%9A%84%E4%BF%A1%E9%A0%BC%E3%81%AE%E5%BD%A2%E6%88%90%E5%AE%89%E7%AB%8B%E7%AB%9C%E6%B8%85%E4%B8%8A%E5%90%91%E4%BA%95%E9%BA%BB%E5%B8%8C%E5%BE%97%E9%87%8D%E4%BE%91%E5%BC%A5%E5%89%8D%E7%94%B0%E3%81%B2%E3%81%AA%E3%81%9F%E6%9D%91%E6%BE%A4%E8%8E%89%E4%BE%9D%E8%A1%8C%E6%AD%A6%E9%A6%99%E9%9F%B3%E5%90%8C%E5%BF%97%E7%A4%BE%E5%A4%A7%E5%AD%A6%E5%95%86%E5%AD%A6%E9%83%A8">組織の人事評価におけるAIフィードバックと個別的信頼の形成：安立竜清、上向井麻希、得重侑弥、前田ひなた、村澤莉依、行武香音(同志社大学商学部)</h4>
+<p>自分の研究内容を人に説明したときに「AIに自分を評価されたくない」「評価がブラックボックスになりそうで怖い」という意見を受けたことがあったので、興味があった。<br>
+研究結果として人間とAIでも変わらず、信頼性と評価に関する結果は変わらないとのこと。被験者が学生であることが結果を変えてしまうかもしれないとあったが、この実験を情報工学部内のみで行う、理系大学生のみで行うなどで実験結果がすごく変わりそうでサーベイ実験の難しさを感じた。(場面想定法の限界？)<br>
+チャットの質問で「フィードバックはそんなに負担じゃないのでは？」というものがあった。こういった意見を納得させるためにどうすればいいのかを学生が考えるのは難しそうなので、発表する際は社会人の意見を聞くことが大切になりそうだ。</p>
+<h2 id="%E6%84%9F%E6%83%B3">感想</h2>
+<p>今回のJSAIはオンラインとのハイブリッド開催で、松本君は現地で参加し発表を行いましたが、他の人はオンラインでの参加となりました。</p>
+<p>オンラインでの参加は移動の手間がないなどの良い面もありますが、やはり現地でしか味わえない雰囲気や面白さがあると思います。</p>
+<p>なので来年のJSAIには研究室のみんなでぜひ現地参加をして、実際の会場の雰囲気を味わいたいです！</p>
+<p>最後に、私たちの発表を聞いてくださった皆さん、また質問やコメントをしてくださった皆さん、大変興味深い発表をして下さった皆さん、本当にありがとうございました。今後の研究も精一杯頑張ります。</p>
+
+</body>
+</html>
