@@ -54,6 +54,13 @@
   margin-bottom: 30px;
 }
 
+#content h2 {
+    font-weight: lighter;
+    font-size: 200%;
+    border-bottom: #87ff1e solid thin;
+    margin-bottom: 30px;
+  }
+
 /*画像のリサイズ*/
 p.resizeimage img {
   margin: 0 auto;
