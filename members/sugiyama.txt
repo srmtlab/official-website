@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 col-sm-6">
+            <div class="member-style">
+                <img src="./img/member/sugiyama.jpg" class="img-responsive">
+                <br>情報工学系プログラム<br>杉山紘次郎<br>スクスロ最強
+            </div>
+        </div>
+    </div>
+</div>
