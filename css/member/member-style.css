@@ -2,6 +2,10 @@ img {
   max-width: 80%;
 }
 
+img.member {
+  max-width: 200px;
+}
+
 #content{
     margin: 0 auto 80px;
     max-width: 960px;
