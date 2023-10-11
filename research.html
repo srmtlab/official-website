@@ -43,7 +43,7 @@
     <div id="masthead" class="jumbotron jumbotron-fluid">
       <div class="container container-fixed">
         <h1>研究内容</h1>
-        <p class="masthead-description">白松研究室では、自然言語処理やLinked Open Data (LOD)、行動センシング技術などのAIの要素技術を使って、人々のコラボレーションを支援する技術を研究・開発しています。例として、「シビックテック」「議論」「即興合奏」といったコラボレーションを支援する技術の研究を紹介します。</p>
+        <p class="masthead-description">白松研究室では、自然言語処理やナレッジグラフ、行動センシング技術などのAIの要素技術を使って、人々のコラボレーションを支援する技術を研究・開発しています。例として、「シビックテック」「議論」「即興合奏」といったコラボレーションを支援する技術の研究を紹介します。</p>
       </div>
     </div>
 
@@ -55,12 +55,17 @@
             <div class="col-md-8">
               <div class="elements-summary">
                 <h2>研究内容</h2>
-                <p>Web議論では持っている情報量や議論の理解度などの要因で発言しづらい人が出てきてしまいます。そういった人が発言しやすくなるために、議論支援や関連情報提示を行うことで議論を活性化させ、合意形成をサポートするような研究をしています。具体的には、リアルタイムで行われている議論から発言などのデータを取得してきて、そのデータをもとにGPT-3という自然言語処理システムによって推薦する情報を選別して推薦するということを行っています。</p>
+                <p>Web議論では持っている情報量や議論の理解度などの要因で発言しづらい人が出てきてしまいます。そういった人が発言しやすくなるために、議論支援や関連情報提示を行うことで議論を活性化させ、合意形成をサポートするような研究をしています。具体的には、リアルタイムで行われている議論から発言などのデータを取得してきて、そのデータをもとにChatGPTなどの自然言語処理システムによって推薦する情報を選別して推薦するなどのことを行っています。その他にも、LLMを利用した様々な議論支援システムの開発を行っています。</p>
                 <h2>研究テーマ</h2>
                 <ul>
                   <li style="list-style-type:disc">Web議論中にその議論に関連した、今後の議論展開に役立つ情報を推薦することで発言を促し議論を活性化させるシステム</li>
                   <li style="list-style-type:disc">対立意見を「止揚」させてWin-Winな合意案を導くための支援システム</li>
-                  <li style="list-style-type:disc">Fact Check</li>
+                  <li style="list-style-type:disc">LLMで県庁や行政のファイル検索をして「あのときの経緯」を提示するシステムの開発</li>
+                  <li style="list-style-type:disc">LLM（GPT-3.5）を用いた議論中の誤謬検出</li>
+                  <li style="list-style-type:disc">LLMを用いた議論における論点可視化システムの開発</li>
+                  <li style="list-style-type:disc">仮想空間における自動ファシリテーションのための発言生成</li>
+                  <li style="list-style-type:disc">LLMによる議論シミュレーションとそれを使った議論参加の練習システム</li>
+                  <li style="list-style-type:disc">やる気、興味、関心を推測するシステム</li>
                 </ul>
               </div>
             </div>
@@ -82,12 +87,10 @@
                 <p>近い将来、人間の生活に密着していろいろ支援してくれるパーソナルAIが当たり前になると言われています。例えば、困っているときに相談できる人を教えてくれるとか、やりたいことを考えるのを助けてくれるとか。そういう対話システムを実現したいという研究が、白松研究室にもいくつかあります。</p>
                 <h2>研究テーマ</h2>
                 <ul>
-                  <li style="list-style-type:disc">生活困窮者が何に対して困っているかを聞き取り、支援情報を推薦する対話システム</li>
-                  <li style="list-style-type:disc">Consideration on modeling consistent context and intention using deep neural network for non-task-oriented dialog system</li>
-                  <li style="list-style-type:disc">A dialogue system for mental health care by using gpt3.</li>
-                  <li style="list-style-type:disc">対話ボットを用いたユーザの特性抽出システム</li>
+                  <li style="list-style-type:disc">A dialogue system for mental health care by using LLM.</li>
+                  <li style="list-style-type:disc">就活生向け自己分析支援対話システム</li>
                   <li style="list-style-type:disc">集団の意思決定への参画を支援するパーソナルBot</li>
-                  <li style="list-style-type:disc">Unity3Dを使って、「cluster」でバーチャル空間を作る</li>
+                  <li style="list-style-type:disc">メンタルケアのためのメタ認知支援対話システム</li>
                 </ul>
               </div>
             </div>
@@ -111,7 +114,7 @@
                 <ul>
                   <li style="list-style-type:disc">Entity Linker: 文章の中で言及された固有表現を、知識ベース（Wikidata）内のエンティティに紐付ける</li>
                   <li style="list-style-type:disc">テキスト内における因果関係抽出の手法の開発（主に原因の抽出）</li>
-                  <li style="list-style-type:disc">生活困窮者問題の要因オントロジーの構築</li>
+                  <li style="list-style-type:disc">生活困窮者支援のための要因オントロジーの構築</li>
                 </ul>
               </div>
             </div>
@@ -133,9 +136,9 @@
                 <p>人々が議論するとき、内容を後から見返せるように議事録やメモをとって行われることがあります。しかし、議論が長くなってくると、意見の根拠やプロセスが見えにくくなり、どうしてその意思決定がなされたのかがわからなくなってしまう問題があります。そこで、Web議論システムを活用することにより、議論の内容を構造化することで、どういう意図や根拠でその意見が出たのかを見えるようにするとができます。セマンティックオーサリングでは、議論をグラフ構造にすることで、意見同士の繋がりが分かりやすくなっています。</p>
                 <h2>研究テーマ</h2>
                 <ul>
-                  <li style="list-style-type:disc">GPT-3を用いたアイデア記録のための発話音声の半自動的要約</li>
+                  <li style="list-style-type:disc">LLMを用いたアイデア記録のための発話音声の半自動的要約</li>
                   <li style="list-style-type:disc">グラフ文書の構造におけるメタ認知の測定</li>
-                  <li style="list-style-type:disc">小学生の対面議論における議論音声の自動書き起こし機構の応用</li>
+                  <li style="list-style-type:disc">行政の過去の文書から「あのときの経緯」を可視化するシステム</li>
                 </ul>
               </div>
             </div>
@@ -154,12 +157,12 @@
             <div class="col-md-8">
               <div class="elements-summary">
                 <h2>研究内容</h2>
-                <p>白松研は人々のコラボレーションを支援する技術を研究していますが、自然言語を使ったコラボレーションだけでなく、身体動作を使った即興合奏のようなコラボレーションも研究対象にしています。手の動きでメロディの上下動を指定できる即興合奏支援システムや、ダンスの動きから楽曲生成するシステムを作っています。さらに、2022年からは大規模言語モデルGPT-3を使った楽曲生成にもチャレンジしています。</p>
+                <p>白松研は人々のコラボレーションを支援する技術を研究していますが、自然言語を使ったコラボレーションだけでなく、身体動作を使った即興合奏のようなコラボレーションも研究対象にしています。手の動きでメロディの上下動を指定できる即興合奏支援システムや、ダンスの動きから楽曲生成するシステムを作っています。さらに、2022年からは大規模言語モデルを使った楽曲生成する研究、2023年からはダンス音楽からダンサーの位置構成を生成する研究にもチャレンジしています。</p>
                 <h2>研究テーマ</h2>
                 <ul>
-                  <li style="list-style-type:disc">GPT-3を使った、指定したキーワードを含む歌詞とコード譜の自動生成</li>
+                  <li style="list-style-type:disc">LLMを使ったご当地ソング等の歌詞とコード譜の自動生成</li>
                   <li style="list-style-type:disc">ダンス映像からリアルタイムに変化するリズム推定および楽曲生成</li>
-                  <li style="list-style-type:disc">A dialogue system for mental health care by using gpt3.</li>
+                  <li style="list-style-type:disc">楽曲からダンスの振り付けを支援するためのダンサー位置構成の生成</li>
                 </ul>
               </div>
             </div>
