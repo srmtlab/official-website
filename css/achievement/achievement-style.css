@@ -1,3 +1,38 @@
 .content-description .achievement-style{
     margin-bottom: 20px;
 }
+
+ /* 目次のスタイル */
+        .toc {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .toc h2 {
+            font-size: 1.5em;
+            margin-top: 0;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+        }
+
+        .toc ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .toc li {
+            margin: 10px 0;
+        }
+
+        .toc a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
