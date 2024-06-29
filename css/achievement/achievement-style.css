@@ -2,14 +2,15 @@
     margin-bottom: 20px;
 }
 
-       .toc {
+        .toc {
             background-color: #f9f9f9;
             border: 1px solid #ddd;
             padding: 10px;
             margin-bottom: 20px;
             border-radius: 5px;
             display: flex;
-            justify-content: space-around;
+            flex-direction: column; /* 子要素の並び方向を縦から横に変更 */
+            align-items: center; /* 子要素を中央揃え */
         }
 
         .toc h2 {
@@ -17,7 +18,7 @@
             margin-top: 0;
             border-bottom: 2px solid #ccc;
             padding-bottom: 5px;
-            flex-basis: 100%;
+            width: 100%;
             text-align: center;
         }
 
@@ -26,19 +27,17 @@
             padding-left: 0;
             display: flex;
             margin: 0;
-            width: 100%;
-            justify-content: space-around;
+            justify-content: center; /* 子要素を中央揃え */
         }
 
         .toc li {
-            margin: 0;
+            margin: 0 10px; /* 左右にスペースを追加 */
         }
 
         .toc a {
             text-decoration: none;
             color: #007BFF;
             font-weight: bold;
-            padding: 5px 10px;
         }
 
         .toc a:hover {
