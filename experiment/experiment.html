@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ランダム対話表示</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 p-5 md:p-10">
+    <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-md overflow-hidden p-5 md:p-10">
+        <h1 class="text-2xl md:text-3xl font-bold mb-4">ランダム対話表示</h1>
+        <button onclick="generateRandomDialogs()" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700 mb-6">
+            ランダムな対話例を表示
+        </button>
+
+        <div id="dialog-container" class="space-y-4">
+            <!-- 対話1～48までをここに用意しますが、最初は非表示にします -->
+            <div id="dialog-1" class="hidden">対話例1の内容</div>
+            <div id="dialog-2" class="hidden">対話例2の内容</div>
+            <div id="dialog-3" class="hidden">対話例3の内容</div>
+            <!-- ... -->
+            <div id="dialog-48" class="hidden">対話例48の内容</div>
+        </div>
+    </div>
+
+    <script>
+        function generateRandomDialogs() {
+            // 対話例を表示するための要素数（例: 48個の対話例）
+            const totalDialogs = 48;
+
+            // 3つのランダムな対話例を選ぶ
+            const randomNumbers = [];
+            while (randomNumbers.length < 3) {
+                const randNum = Math.floor(Math.random() * totalDialogs) + 1;
+                if (!randomNumbers.includes(randNum)) {
+                    randomNumbers.push(randNum);
+                }
+            }
+
+            // すべての対話例を非表示にする
+            for (let i = 1; i <= totalDialogs; i++) {
+                document.getElementById('dialog-' + i).classList.add('hidden');
+            }
+
+            // 選ばれた対話例を表示する
+            randomNumbers.forEach(num => {
+                document.getElementById('dialog-' + num).classList.remove('hidden');
+            });
+        }
+    </script>
+</body>
+
+</html>
