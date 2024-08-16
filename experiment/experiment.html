@@ -4,34 +4,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ランダム対話表示</title>
+    <title>実験用</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
 <body class="bg-gray-50 p-5 md:p-10">
     <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-md overflow-hidden p-5 md:p-10">
-        <h1 class="text-2xl md:text-3xl font-bold mb-4">ランダム対話表示</h1>
-        <button onclick="generateRandomDialogs()" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700 mb-6">
-            ランダムな対話例を表示
+        <h1 class="text-2xl md:text-3xl font-bold mb-4">対話実験用</h1>
+        <button onclick="generateRandomDialogs()"
+            class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700 mb-6">
+            対話例を表示
         </button>
 
         <div id="dialog-container" class="space-y-4">
-            <!-- 対話1～48までをここに用意しますが、最初は非表示にします -->
-            <div id="dialog-1" class="hidden">対話例1の内容</div>
-            <div id="dialog-2" class="hidden">対話例2の内容</div>
-            <div id="dialog-3" class="hidden">対話例3の内容</div>
-            <!-- ... -->
-            <div id="dialog-48" class="hidden">対話例48の内容</div>
+            <!-- 対話1 -->
+            <div id="dialog-1" class="hidden">
+                <h2 class="text-xl md:text-2xl font-semibold mb-2">
+                    [対話#1開始]
+                </h2>
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <p><strong>システム：</strong> 最近忙しい？</p>
+                    <p><strong>看護師：</strong> 忙しいけど、やりがいは感じてるよ。</p>
+                    <p><strong>システム：</strong> 忙しい中で、どんなサポートがあればもっと働きやすくなると思う？</p>
+                    <p><strong>看護師：</strong> 昇進の機会が少ないことが不満なんです。どう改善できるでしょうか？</p>
+                    <p><strong>システム：</strong> 昇進の機会が少ないことについて、具体的にどんなサポートや制度があれば改善できると思う？</p>
+                    <p><strong>看護師：</strong> 昇進のための研修や資格取得の支援があれば助かります。</p>
+                    <p><strong>システム：</strong> 昇進のための研修や資格取得の支援について、具体的にどんな内容や形式が理想だと思う？</p>
+                    <p><strong>看護師：</strong> 資格取得のためのオンライン講座や、定期的な研修会が理想です。</p>
+                    <p><strong>システム：</strong> オンライン講座や定期的な研修会について、具体的にどんな内容やテーマが役立つと思う？</p>
+                    <p><strong>看護師：</strong> 管理職向けのリーダーシップ研修や、最新の医療知識のアップデートです。</p>
+                    <p><strong>システム：</strong> 管理職向けのリーダーシップ研修や最新の医療知識のアップデートについて、具体的にどんな内容やテーマが役立つと思う？</p>
+                    <p><strong>看護師：</strong> リーダーシップ研修では、チームマネジメントやコミュニケーションスキルが重要です。</p>
+                    <p><strong>システム：</strong> リーダーシップ研修で学びたい具体的なチームマネジメントやコミュニケーションスキルについて、もう少し詳しく教えてもらえる？</p>
+                    <p><strong>看護師：</strong> チームマネジメントでは、効果的なタスク分配やモチベーション維持が重要です。</p>
+                </div>
+                <h2 class="text-xl md:text-2xl font-semibold mb-2">
+                    [対話#1終了]
+                </h2>
+            </div>
+
+            <!-- 対話2 -->
+            <div id="dialog-2" class="hidden">
+                <h2 class="text-xl md:text-2xl font-semibold mb-2">
+                    [対話#2開始]
+                </h2>
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <p><strong>システム：</strong> 最近忙しい？</p>
+                    <p><strong>看護師：</strong> 忙しいけど、やりがいは感じてるよ。</p>
+                    <p><strong>システム：</strong> 忙しい中で、どんなサポートがあればもっと働きやすくなると思う？</p>
+                    <p><strong>看護師：</strong> 昇進の機会が少ないことが不満なんです。どう改善できるでしょうか？</p>
+                    <p><strong>システム：</strong> 昇進の機会が少ないことについて、具体的にどんなサポートや制度があれば改善できると思う？</p>
+                    <p><strong>看護師：</strong> 昇進のための研修や資格取得の支援があれば助かります。</p>
+                    <p><strong>システム：</strong> 昇進のための研修や資格取得の支援について、具体的にどんな内容や形式が理想だと思う？</p>
+                    <p><strong>看護師：</strong> 資格取得のためのオンライン講座や、定期的な研修会が理想です。</p>
+                    <p><strong>システム：</strong> オンライン講座や定期的な研修会について、具体的にどんな内容やテーマが役立つと思う？</p>
+                    <p><strong>看護師：</strong> 管理職向けのリーダーシップ研修や、最新の医療知識のアップデートです。</p>
+                    <p><strong>システム：</strong> 管理職向けのリーダーシップ研修や最新の医療知識のアップデートについて、具体的にどんな内容やテーマが役立つと思う？</p>
+                    <p><strong>看護師：</strong> リーダーシップ研修では、チームマネジメントやコミュニケーションスキルが重要です。</p>
+                    <p><strong>システム：</strong> リーダーシップ研修で学びたい具体的なチームマネジメントやコミュニケーションスキルについて、もう少し詳しく教えてもらえる？</p>
+                    <p><strong>看護師：</strong> チームマネジメントでは、効果的なタスク分配やモチベーション維持が重要です。</p>
+                </div>
+                <h2 class="text-xl md:text-2xl font-semibold mb-2">
+                    [対話#2終了]
+                </h2>
+            </div>
+
+            <!-- 対話3 -->
+            <div id="dialog-3" class="hidden">
+                <h2 class="text-xl md:text-2xl font-semibold mb-2">
+                    [対話#3開始]
+                </h2>
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <p><strong>システム：</strong> 最近忙しい？</p>
+                    <p><strong>看護師：</strong> 忙しいけど、やりがいは感じてるよ。</p>
+                    <p><strong>システム：</strong> 忙しい中で、どんなサポートがあればもっと働きやすくなると思う？</p>
+                    <p><strong>看護師：</strong> 昇進の機会が少ないことが不満なんです。どう改善できるでしょうか？</p>
+                    <p><strong>システム：</strong> 昇進の機会が少ないことについて、具体的にどんなサポートや制度があれば改善できると思う？</p>
+                    <p><strong>看護師：</strong> 昇進のための研修や資格取得の支援があれば助かります。</p>
+                    <p><strong>システム：</strong> 昇進のための研修や資格取得の支援について、具体的にどんな内容や形式が理想だと思う？</p>
+                    <p><strong>看護師：</strong> 資格取得のためのオンライン講座や、定期的な研修会が理想です。</p>
+                    <p><strong>システム：</strong> オンライン講座や定期的な研修会について、具体的にどんな内容やテーマが役立つと思う？</p>
+                    <p><strong>看護師：</strong> 管理職向けのリーダーシップ研修や、最新の医療知識のアップデートです。</p>
+                    <p><strong>システム：</strong> 管理職向けのリーダーシップ研修や最新の医療知識のアップデートについて、具体的にどんな内容やテーマが役立つと思う？</p>
+                    <p><strong>看護師：</strong> リーダーシップ研修では、チームマネジメントやコミュニケーションスキルが重要です。</p>
+                    <p><strong>システム：</strong> リーダーシップ研修で学びたい具体的なチームマネジメントやコミュニケーションスキルについて、もう少し詳しく教えてもらえる？</p>
+                    <p><strong>看護師：</strong> チームマネジメントでは、効果的なタスク分配やモチベーション維持が重要です。</p>
+                </div>
+                <h2 class="text-xl md:text-2xl font-semibold mb-2">
+                    [対話#3終了]
+                </h2>
+            </div>
+
+            <!-- 対話4 -->
+            <div id="dialog-4" class="hidden">
+                <h2 class="text-xl md:text-2xl font-semibold mb-2">
+                    [対話#4開始]
+                </h2>
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <p><strong>システム：</strong> 最近忙しい？</p>
+                    <p><strong>看護師：</strong> 忙しいけど、やりがいは感じてるよ。</p>
+                    <p><strong>システム：</strong> 忙しい中で、どんなサポートがあればもっと働きやすくなると思う？</p>
+                    <p><strong>看護師：</strong> 昇進の機会が少ないことが不満なんです。どう改善できるでしょうか？</p>
+                    <p><strong>システム：</strong> 昇進の機会が少ないことについて、具体的にどんなサポートや制度があれば改善できると思う？</p>
+                    <p><strong>看護師：</strong> 昇進のための研修や資格取得の支援があれば助かります。</p>
+                    <p><strong>システム：</strong> 昇進のための研修や資格取得の支援について、具体的にどんな内容や形式が理想だと思う？</p>
+                    <p><strong>看護師：</strong> 資格取得のためのオンライン講座や、定期的な研修会が理想です。</p>
+                    <p><strong>システム：</strong> オンライン講座や定期的な研修会について、具体的にどんな内容やテーマが役立つと思う？</p>
+                    <p><strong>看護師：</strong> 管理職向けのリーダーシップ研修や、最新の医療知識のアップデートです。</p>
+                    <p><strong>システム：</strong> 管理職向けのリーダーシップ研修や最新の医療知識のアップデートについて、具体的にどんな内容やテーマが役立つと思う？</p>
+                    <p><strong>看護師：</strong> リーダーシップ研修では、チームマネジメントやコミュニケーションスキルが重要です。</p>
+                    <p><strong>システム：</strong> リーダーシップ研修で学びたい具体的なチームマネジメントやコミュニケーションスキルについて、もう少し詳しく教えてもらえる？</p>
+                    <p><strong>看護師：</strong> チームマネジメントでは、効果的なタスク分配やモチベーション維持が重要です。</p>
+                </div>
+                <h2 class="text-xl md:text-2xl font-semibold mb-2">
+                    [対話#4終了]
+                </h2>
+            </div>
+
+            <!-- 対話5 -->
+            <div id="dialog-5" class="hidden">
+                <h2 class="text-xl md:text-2xl font-semibold mb-2">
+                    [対話#5開始]
+                </h2>
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <p><strong>システム：</strong> 最近忙しい？</p>
+                    <p><strong>看護師：</strong> 忙しいけど、やりがいは感じてるよ。</p>
+                    <p><strong>システム：</strong> 忙しい中で、どんなサポートがあればもっと働きやすくなると思う？</p>
+                    <p><strong>看護師：</strong> 昇進の機会が少ないことが不満なんです。どう改善できるでしょうか？</p>
+                    <p><strong>システム：</strong> 昇進の機会が少ないことについて、具体的にどんなサポートや制度があれば改善できると思う？</p>
+                    <p><strong>看護師：</strong> 昇進のための研修や資格取得の支援があれば助かります。</p>
+                    <p><strong>システム：</strong> 昇進のための研修や資格取得の支援について、具体的にどんな内容や形式が理想だと思う？</p>
+                    <p><strong>看護師：</strong> 資格取得のためのオンライン講座や、定期的な研修会が理想です。</p>
+                    <p><strong>システム：</strong> オンライン講座や定期的な研修会について、具体的にどんな内容やテーマが役立つと思う？</p>
+                    <p><strong>看護師：</strong> 管理職向けのリーダーシップ研修や、最新の医療知識のアップデートです。</p>
+                    <p><strong>システム：</strong> 管理職向けのリーダーシップ研修や最新の医療知識のアップデートについて、具体的にどんな内容やテーマが役立つと思う？</p>
+                    <p><strong>看護師：</strong> リーダーシップ研修では、チームマネジメントやコミュニケーションスキルが重要です。</p>
+                    <p><strong>システム：</strong> リーダーシップ研修で学びたい具体的なチームマネジメントやコミュニケーションスキルについて、もう少し詳しく教えてもらえる？</p>
+                    <p><strong>看護師：</strong> チームマネジメントでは、効果的なタスク分配やモチベーション維持が重要です。</p>
+                </div>
+                <h2 class="text-xl md:text-2xl font-semibold mb-2">
+                    [対話#5終了]
+                </h2>
+            </div>
         </div>
     </div>
 
     <script>
         function generateRandomDialogs() {
-            // 対話例を表示するための要素数（例: 48個の対話例）
-            const totalDialogs = 48;
-
-            // 3つのランダムな対話例を選ぶ
+            // 全5つの対話例から3つ選ぶ
+            const totalDialogs = 5;
             const randomNumbers = [];
+
             while (randomNumbers.length < 3) {
                 const randNum = Math.floor(Math.random() * totalDialogs) + 1;
                 if (!randomNumbers.includes(randNum)) {
