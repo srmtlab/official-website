@@ -2,27 +2,25 @@
 // randomNames を sessionStorage から取得
 function showPersona() {
     // ローカルストレージから "persona" の値を取得
-    var value1 = localStorage.getItem('persona');
-    console.log("this is persona", value1);
+    var selectedPersonas = localStorage.getItem('persona');
+    console.log("this is persona", selectedPersonas);
 
-    // すべての対話例を非表示にする
-    const allDialogs = document.querySelectorAll('div[id]');
-    allDialogs.forEach(dialog => dialog.classList.add('hidden'));
-
-    if (value1) {
-        // value1 を JSON パースして配列に変換
-        const personas = JSON.parse(value1);
-
-        // 配列の各要素に対応するIDを持つ要素を表示
-        personas.forEach(persona => {
-            const selectedDialog = document.getElementById(persona);
-            if (selectedDialog) {
-                selectedDialog.classList.remove('hidden');
-            } else {
-                console.log("No matching dialog found for persona:", persona);
-            }
-        });
-    } else {
-        console.log("No persona value found in localStorage.");
+    // 選ばれたペルソナの組み合わせを作る
+    for (let i = 0; i < 3; i++) {
+        const personaId = selectedPersonas[i];
+        selectedPersonas.push(personaId);
     }
+
+    // すべてのペルソナを非表示にする
+    const allPersonas = document.querySelectorAll('#persona-container > div');
+    allPersona.forEach(persona => persona.classList.add('hidden'));
+
+    // 選ばれたペルソナを表示し、適切な位置に移動する
+    const personaContainer = document.getElementById('persona-container');
+    allPersonas.forEach(persona => persona.classList.add('hidden'));
+    selectedPersonas.forEach(personaId => {
+        const personaElement = document.getElementById(personaId);
+        personaElement.classList.remove('hidden');
+        personaContainer.appendChild(personaElement);  // 対話をコンテナの最後に移動
+    });
 }
