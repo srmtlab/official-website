@@ -14,8 +14,10 @@ function generateRandomDialogs() {
             randomNames.push(randName);
         }
     }
+
     // 選ばれた名前を localStorage に保存
-    localStorage.setItem('randomNames', JSON.stringify(randomNames));
+    localStorage.setItem('persona', JSON.stringify(randomNames));
+    console.log("this is persona", randomNames); // ここで randomNames を使って何かを処理する
     console.log(localStorage);
 
     // モデルリストをシャッフルしてrandomModelsに追加
