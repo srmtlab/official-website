@@ -1,3 +1,4 @@
+// start.js
 // ダイアログを読み込む
 function loadDialogs() {
     fetch('dialogs.html')
