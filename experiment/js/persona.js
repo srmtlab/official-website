@@ -4,7 +4,14 @@ function showPersona() {
     var selectedPersonas = localStorage.getItem('persona');
 
     // 取得した文字列を配列に変換
-    selectedPersonas = selectedPersonas ? JSON.parse(selectedPersonas) : [];
+    try {
+        selectedPersonas = JSON.parse(selectedPersonas);
+        if (!Array.isArray(selectedPersonas)) {
+            selectedPersonas = [];
+        }
+    } catch (e) {
+        selectedPersonas = [];
+    }
 
     console.log("this is persona", selectedPersonas);
 
