@@ -1,8 +1,0 @@
-<div class="col-md-3 col-sm-6">
-                            <div class="member-style">
-                                <img src="./img/member/default.png" class="img-responsive">
-                                <br>
-                                    松本 宇宙
-                                <br> 　 　 　
-                            </div>
-                        </div>
