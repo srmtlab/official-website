@@ -44,7 +44,7 @@
   <div id="fb-root"></div>
   <script async defer crossorigin="anonymous"
     src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.3"></script>
-    
+
   <header>
     <nav id="header" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <span class="navbar-brand mb-0 h1 theme">白松研究室</span>
@@ -194,7 +194,19 @@
         function (data) {
           var out_html = $($.parseHTML(data));//parse
           $('#news').empty().append(out_html.filter('#news')[0].innerHTML);
+          // ここから `recentevent.html` のスクリプトを追加
+          function loadfiles() {
+            fetch('./member/graduated.html')
+              .then(response => response.text())
+              .then(data => {
+                document.getElementById('2024').innerHTML = data;
+              })
+              .catch(error => console.error('Error loading:', error));
+          }
 
+          // ページ読み込み時に外部ファイルを読み込む
+          loadfiles();
+          // ここまで `recentevent.html` のスクリプト
         },
         function (jqXHR, textStatus) {
           if (textStatus !== "success") {
