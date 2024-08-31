@@ -29,31 +29,41 @@
     </div>
 
     <script>
-        function loadFile(url, elementId) {
-            fetch(url)
+        function loadfiles() {
+            fetch('./member/graduated.html')
                 .then(response => response.text())
                 .then(data => {
-                    document.getElementById(elementId).innerHTML = data;
+                    document.getElementById('2024').innerHTML = data;
                 })
-                .catch(error => console.error(`Error loading ${url}:`, error));
+                .catch(error => console.error('Error loading:', error));
         }
+        // ページ読み込み時に外部ファイルを読み込む
+        window.onload = loadfiles;
+        // function loadFile(url, elementId) {
+        //     fetch(url)
+        //         .then(response => response.text())
+        //         .then(data => {
+        //             document.getElementById(elementId).innerHTML = data;
+        //         })
+        //         .catch(error => console.error(`Error loading ${url}:`, error));
+        // }
 
-        function loadFiles() {
-            const publications = [
-                { url: './recent_events/2024.html', elementId: '2024' },
-                { url: './recent_events/2023.html', elementId: '2023' },
-                { url: './recent_events/2022.html', elementId: '2022' },
-                { url: './recent_events/2021.html', elementId: '2021' },
-                { url: './recent_events/2020.html', elementId: '2020' },
-                { url: './recent_events/2019.html', elementId: '2019' },
-                { url: './recent_events/2018.html', elementId: '2018' },
-                { url: './recent_events/2017.html', elementId: '2017' },
-                { url: './recent_events/2016.html', elementId: '2016' },
-            ];
-            publications.forEach(pub => loadFile(pub.url, pub.elementId));
-        }
+        // function loadFiles() {
+        //     const publications = [
+        //         { url: './recent_events/2024.html', elementId: '2024' },
+        //         { url: './recent_events/2023.html', elementId: '2023' },
+        //         { url: './recent_events/2022.html', elementId: '2022' },
+        //         { url: './recent_events/2021.html', elementId: '2021' },
+        //         { url: './recent_events/2020.html', elementId: '2020' },
+        //         { url: './recent_events/2019.html', elementId: '2019' },
+        //         { url: './recent_events/2018.html', elementId: '2018' },
+        //         { url: './recent_events/2017.html', elementId: '2017' },
+        //         { url: './recent_events/2016.html', elementId: '2016' },
+        //     ];
+        //     publications.forEach(pub => loadFile(pub.url, pub.elementId));
+        // }
 
-        window.onload = loadFiles;
+        // window.onload = loadFiles;
     </script>
 </body>
 
