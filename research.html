@@ -1,49 +1,18 @@
 <!DOCTYPE html>
 <html lang="jp">
 
-<head>
-  <meta charset="UTF-8">
-
-  <link rel="icon" type="image/png" href="img/srmtlab_logo.png">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/common/all-style.css">
-  <link rel="stylesheet" href="css/research/research-style.css">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  <title>白松研究室</title>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="白松研究室研究内容">
-  <meta name="keywords" content="白松研究室,名工大,白松 俊,研究内容">
-  <meta name="author" content="白松研究室">
-</head>
+<head id="head"> </head>
 
 <body>
-  <header>
-    <nav id="header" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <span class="navbar-brand mb-0 h1 theme">白松研究室</span>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <header id="header"> </header>
 
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-item nav-link" href="./index.html">トップ</a>
-          <a class="nav-item nav-link" href="./member.html">メンバー</a>
-          <a class="nav-item nav-link active" href="./research.html">研究内容</a>
-          <a class="nav-item nav-link" href="./publication.html">論文一覧</a>
-          <a class="nav-item nav-link" href="./access.html">アクセス</a>
-          <a class="nav-item nav-link" href="./link.html">リンク</a>
-        </div>
-      </div>
-    </nav>
-  </header>
   <main>
     <div id="masthead" class="jumbotron jumbotron-fluid">
       <div class="container container-fixed">
         <h1>研究内容</h1>
-        <p class="masthead-description">白松研究室では、自然言語処理やナレッジグラフ、行動センシング技術などのAIの要素技術を使って、人々のコラボレーションを支援する技術を研究・開発しています。例として、「シビックテック」「議論」「即興合奏」といったコラボレーションを支援する技術の研究を紹介します。</p>
+        <p class="masthead-description">
+          白松研究室では、自然言語処理やナレッジグラフ、行動センシング技術などのAIの要素技術を使って、人々のコラボレーションを支援する技術を研究・開発しています。例として、「シビックテック」「議論」「即興合奏」といったコラボレーションを支援する技術の研究を紹介します。
+        </p>
       </div>
     </div>
 
@@ -55,7 +24,9 @@
             <div class="col-md-8">
               <div class="elements-summary">
                 <h2>研究内容</h2>
-                <p>Web議論では持っている情報量や議論の理解度などの要因で発言しづらい人が出てきてしまいます。そういった人が発言しやすくなるために、議論支援や関連情報提示を行うことで議論を活性化させ、合意形成をサポートするような研究をしています。具体的には、リアルタイムで行われている議論から発言などのデータを取得してきて、そのデータをもとにChatGPTなどの自然言語処理システムによって推薦する情報を選別して推薦するなどのことを行っています。その他にも、LLMを利用した様々な議論支援システムの開発を行っています。</p>
+                <p>
+                  Web議論では持っている情報量や議論の理解度などの要因で発言しづらい人が出てきてしまいます。そういった人が発言しやすくなるために、議論支援や関連情報提示を行うことで議論を活性化させ、合意形成をサポートするような研究をしています。具体的には、リアルタイムで行われている議論から発言などのデータを取得してきて、そのデータをもとにChatGPTなどの自然言語処理システムによって推薦する情報を選別して推薦するなどのことを行っています。その他にも、LLMを利用した様々な議論支援システムの開発を行っています。
+                </p>
                 <h2>研究テーマ</h2>
                 <ul>
                   <li style="list-style-type:disc">Web議論中にその議論に関連した、今後の議論展開に役立つ情報を推薦することで発言を促し議論を活性化させるシステム</li>
@@ -74,7 +45,7 @@
             </div>
           </div>
         </div><!--container-->
-      </div><!--content-description--> 
+      </div><!--content-description-->
 
 
       <div class="content-description">
@@ -84,7 +55,9 @@
             <div class="col-md-8">
               <div class="elements-summary">
                 <h2>研究内容</h2>
-                <p>近い将来、人間の生活に密着していろいろ支援してくれるパーソナルAIが当たり前になると言われています。例えば、困っているときに相談できる人を教えてくれるとか、やりたいことを考えるのを助けてくれるとか。そういう対話システムを実現したいという研究が、白松研究室にもいくつかあります。</p>
+                <p>
+                  近い将来、人間の生活に密着していろいろ支援してくれるパーソナルAIが当たり前になると言われています。例えば、困っているときに相談できる人を教えてくれるとか、やりたいことを考えるのを助けてくれるとか。そういう対話システムを実現したいという研究が、白松研究室にもいくつかあります。
+                </p>
                 <h2>研究テーマ</h2>
                 <ul>
                   <li style="list-style-type:disc">A dialogue system for mental health care by using LLM.</li>
@@ -95,11 +68,11 @@
               </div>
             </div>
             <div class="col-md-4">
-              <p class="resizeimage"><img src="img/research/system-2.png"class="class1"></p>
+              <p class="resizeimage"><img src="img/research/system-2.png" class="class1"></p>
             </div>
           </div>
         </div><!--container-->
-      </div><!--content-description--> 
+      </div><!--content-description-->
 
 
       <div class="content-description">
@@ -109,7 +82,8 @@
             <div class="col-md-8">
               <div class="elements-summary">
                 <h2>研究内容</h2>
-                <p>ナレッジグラフとは、Web上にあるさまざまな情報源を体系的に連結し、グラフ構造で表した知識のネットワーク（データベース）のことです。白松研では、ナレッジグラフの中でも、オントロジーの構築やLinked Open Data（LOD）を利用した研究を行っています。</p>
+                <p>ナレッジグラフとは、Web上にあるさまざまな情報源を体系的に連結し、グラフ構造で表した知識のネットワーク（データベース）のことです。白松研では、ナレッジグラフの中でも、オントロジーの構築やLinked
+                  Open Data（LOD）を利用した研究を行っています。</p>
                 <h2>研究テーマ</h2>
                 <ul>
                   <li style="list-style-type:disc">Entity Linker: 文章の中で言及された固有表現を、知識ベース（Wikidata）内のエンティティに紐付ける</li>
@@ -133,7 +107,9 @@
             <div class="col-md-8">
               <div class="elements-summary">
                 <h2>研究内容</h2>
-                <p>人々が議論するとき、内容を後から見返せるように議事録やメモをとって行われることがあります。しかし、議論が長くなってくると、意見の根拠やプロセスが見えにくくなり、どうしてその意思決定がなされたのかがわからなくなってしまう問題があります。そこで、Web議論システムを活用することにより、議論の内容を構造化することで、どういう意図や根拠でその意見が出たのかを見えるようにするとができます。セマンティックオーサリングでは、議論をグラフ構造にすることで、意見同士の繋がりが分かりやすくなっています。</p>
+                <p>
+                  人々が議論するとき、内容を後から見返せるように議事録やメモをとって行われることがあります。しかし、議論が長くなってくると、意見の根拠やプロセスが見えにくくなり、どうしてその意思決定がなされたのかがわからなくなってしまう問題があります。そこで、Web議論システムを活用することにより、議論の内容を構造化することで、どういう意図や根拠でその意見が出たのかを見えるようにするとができます。セマンティックオーサリングでは、議論をグラフ構造にすることで、意見同士の繋がりが分かりやすくなっています。
+                </p>
                 <h2>研究テーマ</h2>
                 <ul>
                   <li style="list-style-type:disc">LLMを用いたアイデア記録のための発話音声の半自動的要約</li>
@@ -157,7 +133,9 @@
             <div class="col-md-8">
               <div class="elements-summary">
                 <h2>研究内容</h2>
-                <p>白松研は人々のコラボレーションを支援する技術を研究していますが、自然言語を使ったコラボレーションだけでなく、身体動作を使った即興合奏のようなコラボレーションも研究対象にしています。手の動きでメロディの上下動を指定できる即興合奏支援システムや、ダンスの動きから楽曲生成するシステムを作っています。さらに、2022年からは大規模言語モデルを使った楽曲生成する研究、2023年からはダンス音楽からダンサーの位置構成を生成する研究にもチャレンジしています。</p>
+                <p>
+                  白松研は人々のコラボレーションを支援する技術を研究していますが、自然言語を使ったコラボレーションだけでなく、身体動作を使った即興合奏のようなコラボレーションも研究対象にしています。手の動きでメロディの上下動を指定できる即興合奏支援システムや、ダンスの動きから楽曲生成するシステムを作っています。さらに、2022年からは大規模言語モデルを使った楽曲生成する研究、2023年からはダンス音楽からダンサーの位置構成を生成する研究にもチャレンジしています。
+                </p>
                 <h2>研究テーマ</h2>
                 <ul>
                   <li style="list-style-type:disc">LLMを使ったご当地ソング等の歌詞とコード譜の自動生成</li>
@@ -178,6 +156,7 @@
   <footer>
 
   </footer>
+  <script src="js/heads.js"></script>
 </body>
 
 </html>
