@@ -8,7 +8,6 @@
 
 <body>
     <div id="news">
-        aaaaaaaaaaaaa
         <div id="2024"> </div>
 
         <div id="2023"> </div>
@@ -30,6 +29,7 @@
     </div>
 
     <script>
+        console.log("AAAAAAAAAAAAAA");
         function loadfiles() {
             fetch('./member/graduated.html')
                 .then(response => response.text())
@@ -38,6 +38,7 @@
                 })
                 .catch(error => console.error('Error loading:', error));
         }
+        console.log("CCCCCCCCCCCCC");
         // ページ読み込み時に外部ファイルを読み込む
         window.onload = loadfiles;
         // function loadFile(url, elementId) {
