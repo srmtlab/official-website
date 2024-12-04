@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .slide-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 900px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide {
+            padding: 40px;
+            display: none;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2563eb;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .grid {
+            display: grid;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .grid-2 {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .grid-3 {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .card {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .card-blue {
+            background: #eff6ff;
+            border: 2px solid #bfdbfe;
+        }
+
+        .card-green {
+            background: #f0fdf4;
+            border: 2px solid #bbf7d0;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 12px;
+        }
+
+        .card-content {
+            color: #4b5563;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 40px;
+            background: #f8fafc;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .nav-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 50%;
+        }
+
+        .nav-button:hover {
+            background: #e5e7eb;
+        }
+
+        .nav-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .slide-number {
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        .arrow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #2563eb;
+            font-size: 24px;
+            margin: 0 16px;
+        }
+
+        .list-item {
+            margin-bottom: 8px;
+        }
+
+        .highlight {
+            background: #fef3c7;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- Slide 1: さかさま不動産 概要 -->
+        <div class="slide" id="slide1">
+            <h2 class="title">(1) さかさま不動産×LLM：夢からはじまる不動産マッチング</h2>
+            
+            <div class="grid grid-2">
+                <div class="card card-blue">
+                    <h3 class="card-title">従来の不動産マッチング</h3>
+                    <div class="card-content">
+                        <p class="list-item">• 物件ありき</p>
+                        <p class="list-item">• 条件による制限</p>
+                        <p class="list-item">• 表面的なマッチング</p>
+                    </div>
+                </div>
+                
+                <div class="card card-green">
+                    <h3 class="card-title">さかさま不動産の革新性</h3>
+                    <div class="card-content">
+                        <p class="list-item">• 夢・想いからスタート</p>
+                        <p class="list-item">• 可能性の探索</p>
+                        <p class="list-item">• 共感によるマッチング</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">技術的な面白さ</h3>
+                <div class="grid grid-2">
+                    <div class="card-content">
+                        <p class="list-item">• 漠然とした夢から具体的なプランを導き出す推論</p>
+                        <p class="list-item">• 実現可能性を考慮した提案生成</p>
+                    </div>
+                    <div class="card-content">
+                        <p class="list-item">• 想いの共感度を数値化する感情分析</p>
+                        <p class="list-item">• 文脈を理解した貸主・借主の相性評価</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: システムアーキテクチャ -->
+        <div class="slide" id="slide2">
+            <h2 class="title">(1) さかさま不動産×LLM：システムアーキテクチャ</h2>
+            
+            <div class="grid grid-2">
+                <div class="card card-blue">
+                    <h3 class="card-title">フェーズ1：対話システム</h3>
+                    <div class="card-content">
+                        <p class="list-item">• 「やりたいこと」の聴き取りと言語化支援<br /><a href="https://chatgpt.com/g/g-6750251c52cc8191bda97d2633a425ce-sakasamabu-dong-chan-bi-da-tigpt">カスタムGPTによるプロトタイプ</a></p>
+                        <p class="list-item">• 実現可能性の評価と提案生成</p>
+                        <p class="list-item">• 過去事例からの知見活用</p>
+                    </div>
+                </div>
+                
+                <div class="card card-green">
+                    <h3 class="card-title">フェーズ2：マッチングシステム</h3>
+                    <div class="card-content">
+                        <p class="list-item">• 相性予測モデルによる推論</p>
+                        <p class="list-item">• 文脈を考慮した貸主推薦</p>
+                        <p class="list-item">• 対話履歴に基づく関係構築</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-3">
+                <div class="card">
+                    <h4 class="card-title">基盤技術</h4>
+                    <div class="card-content">
+                        <p class="list-item">• LLMによる推論制御</p>
+                        <p class="list-item">• RAGによる知識活用</p>
+                        <p class="list-item">• 対話履歴の文脈理解</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h4 class="card-title">データ基盤</h4>
+                    <div class="card-content">
+                        <p class="list-item">• 事例ベクトルDB</p>
+                        <p class="list-item">• マッチング履歴分析</p>
+                        <p class="list-item">• 相性評価モデル</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h4 class="card-title">技術的課題</h4>
+                    <div class="card-content">
+                        <p class="list-item">• 推論の精度向上</p>
+                        <p class="list-item">• 文脈を考慮した提案</p>
+                        <p class="list-item">• 相性評価の客観性</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: 地域連携支援の必要性 -->
+        <div class="slide" id="slide3">
+            <h2 class="title">(2) 様々な連携可能性（マッチング）をLLMが提案</h2>
+            
+            <div class="grid grid-2">
+                <div class="card card-blue">
+                    <h3 class="card-title">進行中のプロジェクト</h3>
+                    <div class="card-content">
+                        <div class="list-item">
+                            <p class="font-bold">地域の助け合いネットワーク</p>
+                            <p>• ボラみみより情報局主導</p>
+                            <p>• トヨタ財団の支援</p>
+                            <p>• 地域の支援ニーズと支援者のマッチング</p>
+                        </div>
+                        <div class="list-item">
+                            <p class="font-bold">中川運河周辺企業連携</p>
+                            <p>• 中小企業間の技術連携</p>
+                            <p>• 新規ビジネス創出</p>
+                            <p>• 地域活性化への貢献</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card card-green">
+                    <h3 class="card-title">共通する課題</h3>
+                    <div class="card-content">
+                        <p class="list-item">• 連携ニーズの把握が困難</p>
+                        <p class="list-item">• 適切な連携先の発見に時間</p>
+                        <p class="list-item">• 連携可能性の見える化が必要</p>
+                        <p class="list-item">• 持続可能な仕組みづくり</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">支援システムの必要性</h3>
+                <div class="grid grid-2">
+                    <div class="card-content">
+                        <p class="list-item">• 対話による潜在ニーズの発掘</p>
+                        <p class="list-item">• 多様な連携可能性の示唆</p>
+                        <p class="list-item">• ナレッジの蓄積と活用</p>
+                    </div>
+                    <div class="card-content">
+                        <p class="list-item">• 効率的なマッチング支援</p>
+                        <p class="list-item">• 連携事例の構造化</p>
+                        <p class="list-item">• 持続可能な運営支援</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: マッチング可視化システム -->
+        <div class="slide" id="slide4">
+            <h2 class="title">(2) 様々な連携可能性をLLMが提案：マッチング可視化システムの構想</h2>
+            
+            <div class="grid grid-2">
+                <div class="card card-blue">
+                    <h3 class="card-title">セマンティックエディタ活用</h3>
+                    <div class="card-content">
+                        <p class="list-item">• 沖電気の技術を活用</p>
+                        <p class="list-item">• 連携関係のグラフ構造化</p>
+                        <p class="list-item">• 直感的な可視化と編集</p>
+                        <p class="list-item">• 関係性の動的な発見</p>
+                    </div>
+                </div>
+                
+                <div class="card card-green">
+                    <h3 class="card-title">知識グラフの特徴</h3>
+                    <div class="card-content">
+                        <p class="list-item">• 組織・人・技術のネットワーク化</p>
+                        <p class="list-item">• 潜在的な連携可能性の表現</p>
+                        <p class="list-item">• 文脈を考慮した関係性抽出</p>
+                        <p class="list-item">• マッチング履歴の活用</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3 class="card-title">システムの特徴</h3>
+                    <div class="card-content">
+                        <p class="list-item">• インタラクティブな可視化</p>
+                        <p class="list-item">• 柔軟なグラフ構造の拡張</p>
+                        <p class="list-item">• 推論による新規連携の提案</p>
+                        <p class="list-item">• 対話的な情報収集との連携</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title">期待される効果</h3>
+                    <div class="card-content">
+                        <p class="list-item">• 連携機会の効率的な発見</p>
+                        <p class="list-item">• 新規事業創出の促進</p>
+                        <p class="list-item">• コミュニティの活性化</p>
+                        <p class="list-item">• 持続可能な地域づくり</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: 運営支援システムの必要性 -->
+        <div class="slide" id="slide5">
+            <h2 class="title">(3) 運営支援システム：白松研＆ソシアノッターの運営支援の必要性</h2>
+            
+            <div class="grid grid-2">
+                <div class="card card-blue">
+                    <h3 class="card-title">現状の課題</h3>
+                    <div class="card-content">
+                        <p class="list-item">• プロジェクト間の情報共有が不十分</p>
+                        <p class="list-item">• 目標設定が属人的で見えづらい</p>
+                        <p class="list-item">• 進捗管理が体系的でない</p>
+                        <p class="list-item">• アジャイルな意思決定が困難</p>
+                    </div>
+                </div>
+                
+                <div class="card card-green">
+                    <h3 class="card-title">OKR（Objectives and Key Results）</h3>
+                    <div class="card-content">
+                        <p class="list-item">• 目標（Objective）と成果指標（Key Result）の明確化</p>
+                        <p class="list-item">• チーム間での目標の連携と共有</p>
+                        <p class="list-item">• 定量的な進捗管理の実現</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">目指すべき姿</h3>
+                <div class="card-content">
+                    <p class="list-item highlight">頑張らなくても目標共有や情報共有が自然にできる</p>
+                    <div class="grid grid-2">
+                        <div>
+                            <p class="list-item">• 研究と実装の効果的な連携</p>
+                            <p class="list-item">• プロジェクト間の有機的な結びつき</p>
+                        </div>
+                        <div>
+                            <p class="list-item">• 迅速な意思決定と柔軟な対応</p>
+                            <p class="list-item">• 共通目標に向けた効率的な協働</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: 運営支援システムの構想 -->
+        <div class="slide" id="slide6">
+            <h2 class="title">(3) 運営支援システム：現状＆今後の構想</h2>
+            
+            <div class="grid grid-2">
+                <div class="card card-blue">
+                    <h3 class="card-title">Slack連携bot（M1伊藤君が開発中）</h3>
+                    <div class="card-content">
+                        <p class="list-item">• Times_xxxチャネルでの進捗聴取</p>
+                        <p class="list-item">• 自然な対話による情報収集</p>
+                        <p class="list-item">• 定期的なフォローアップ</p>
+                    </div>
+                </div>
+                
+                <div class="card card-green">
+                    <h3 class="card-title">OKR構造化</h3>
+                    <div class="card-content">
+                        <p class="list-item">• セマンティックエディタとの連携</p>
+                        <p class="list-item">• 目標と進捗の構造的な可視化</p>
+                        <p class="list-item">• プロジェクト間の関係性の明確化</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3 class="card-title">期待される効果</h3>
+                    <div class="card-content">
+                        <p class="list-item">• 情報共有の効率化</p>
+                        <p class="list-item">• 目標の明確化と共有</p>
+                        <p class="list-item">• プロジェクト間連携の促進</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title">技術的特徴</h3>
+                    <div class="card-content">
+                        <p class="list-item">• LLMによる対話型情報収集</p>
+                        <p class="list-item">• 知識グラフベースの構造化</p>
+                        <p class="list-item">• リアルタイムな可視化</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <button class="nav-button" id="prevBtn">◀</button>
+            <span class="slide-number">1 / 6</span>
+            <button class="nav-button" id="nextBtn">▶</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 6;
+
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+            const slideNumber = document.querySelector('.slide-number');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+
+            slides.forEach(slide => slide.style.display = 'none');
+            document.getElementById(`slide${n}`).style.display = 'block';
+            slideNumber.textContent = `${n} / ${totalSlides}`;
+
+            prevBtn.disabled = n === 1;
+            nextBtn.disabled = n === totalSlides;
+        }
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            if (currentSlide > 1) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            if (currentSlide < totalSlides) {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        });
+
+        // Initialize
+        showSlide(1);
+    </script>
+</body>
+</html>
