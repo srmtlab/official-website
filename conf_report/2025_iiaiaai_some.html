@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IIAI AAI 2025 参加報告</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 p-5 md:p-10">
+  <div class="max-w-5xl mx-auto bg-white rounded-xl shadow-md overflow-hidden p-5 md:p-10">
+    <h1 class="text-2xl md:text-3xl font-bold mb-4">IIAI AAI 2025 参加報告</h1>
+    
+    <div class="mb-6 md:mb-8">
+      <h2 class="text-xl md:text-2xl font-bold mb-4">はじめに</h2>
+      <p>この度、北九州で開催されたIIAI AAI 2025でM2の櫻井と川島が発表をしたので、参加報告を行ないます。</br></p>
+    </div>
+
+    <div class="mb-6 md:mb-8">
+      <h2 class="text-xl md:text-2xl font-bold mb-4">櫻井</h2>
+      <div class="mb-4">
+        <h3 class="text-lg md:text-xl font-semibold mb-2">発表内容</h3>
+        <p><strong>発表タイトル：</strong>「LLM-Based Stepwise Dialogue and Phase-Appropriate Information Recommendation for Goal Achievement」</p>
+        <p><strong>概要：</strong>LLMの発展により、ユーザの目標やニーズに応じた対話型支援が可能になりつつある。しかし目標が曖昧な状態のユーザに対して効果的な情報推薦を行う手法は十分に確立されていない。本研究では、段階的な聞き取りを通じてユーザの目標を明確化し、各段階に適した情報を推薦する対話型エージェントを提案する。提案手法の有効性を検証するため、ベースライン手法との比較実験を実施した。
+          </br>その結果、提案手法は対話の適切性や情報の有用性、推薦理由の納得性など、すべての評価観点においてベースラインより高い評価を獲得した。統計的有意差はなかったものの、いくつかの観点において効果量に基づく初期的な効果が示唆された。特にユーザの段階に応じた情報推薦において大きな差が見られた。これらの結果は、目標達成支援システムにおける構造化された対話設計とフェーズに適した情報推薦の重要性を示唆している。
+          </br>また、本手法には、プロンプト設計の制限や質問の提示による対話の妨げといった課題も確認されており、今後はより柔軟で自然な対話の設計に向けた改善が求められる。</p>
+        <p><strong>質疑応答：</strong></p>
+        <p>Q: Follow-up Agentの役割とその効果の測定方法</p>
+        <p>A: Search Agentの後に動いて，web検索の理由とそれがどう役に立つのかを説明する．今回効果は測定できていないから今後の課題（本当は質問項目の8番の結果に影響があるはずだからそのように答えるのが適切だった）．</p>
+        <p>Q: Baselineは何か</p>
+        <p>A: 普通のCIRと同じだけどユーザの目標達成を支援するように伝えてある（ただのLLMなのかが気になっていた）．</p>
+      </div>
+      
+      <div class="mb-4">
+        <h3 class="text-lg md:text-xl font-semibold mb-2">感想</h3>
+        <p>毎年日本で開催しているということもあり、とても日本人が多い学会だった。係の人に日本語が通じるため、英語で困ることがなく、最初にいく国際学会としておすすめだと感じた。最初の国際学会では質問が理解できず、答えられないということがあったが、今回は全て理解でき、英語で回答することもできた点は良かった。情報系以外の方の話も聞くことができ、得るものが多い学会だった。</p>
+      </div>
+    </div>
+
+    <div class="mb-6 md:mb-8">
+      <h2 class="text-xl md:text-2xl font-bold mb-4">川島</h2>
+      <div class="mb-4">
+        <h3 class="text-lg md:text-xl font-semibold mb-2">発表内容</h3>
+        <p><strong>発表タイトル：</strong>「Dynamic Prompt-Controlled Training System Using Large Language Models for Facilitating In-Depth Customer Interview Questions」</p>
+        <p><strong>概要：</strong>近年、顧客の潜在ニーズを的確に把握することが重要視されている。そこで顧客に直接インタビューを実施することが有用とされているが、そのトレーニング機会は限られている。我々は LLM をインタビュイーとして活用する顧客インタビュートレーニングシステムを提案する。LLMのプロンプトに全ての潜在的情報を事前に記載する静的なプロンプト設計では、ユーザーの初回質問に対して容易に情報が開示され、インタビュースキル向上という訓練目的が達成できなかった。そこで、対話の進行に応じてプロンプトを動的に更新することで、ユーザが適切な深堀り質問を行わなければ、システムから潜在ニーズを引き出せない仕組みを導入した。トレーニングを実施し、ベースライン手法では被験者からの質問数が平均35%の増加にとどまったのに対し、提案手法では平均148%増加した。また、提案手法のシステムから１つの情報を聞き出すために要した質問数は、ベースライン手法と比較して最大で約4倍となり、深堀り質問の促進において有効であると示された。</p>
+        <p><strong>質疑応答：</strong></p>
+        <p>（後日追記予定）</p>
+      </div>
+      
+      <div class="mb-4">
+        <h3 class="text-lg md:text-xl font-semibold mb-2">感想</h3>
+        <p>１スピーカーあたり２５分と少し長めに時間を使えるため、より多くの意見を受けられることが良いと感じた。アジア人が中心のため話される英語も聞き慣れたものが多く、ハードルは低いと感じた。ポスターセッションでは、コーヒーブレイクしながら話を聞けるため楽しかった。</p>
+      </div>
+    </div>
+
+    <div class="mb-6 md:mb-8">
+      <h2 class="text-xl md:text-2xl font-bold mb-4">気になった研究</h2>
+      
+      <div class="mb-4">
+        <h3 class="text-base md:text-lg font-semibold mb-1">The Construction of Instruction-tuned LLMs for Finance without Instruction Data Using Continual Pretraining and Model Merging</h3>
+        <p><strong>概要、気になった理由、感想：</strong>金融ドメイン特化のLLMを作るために、評価基盤（ベンチマーク）、学習データ、学習手法を一通り構築し、その有効性を検証する研究。
+            webクローリングでデータ収集、llama-3などに金融知識を学習させていた。結果、GPT-4などよりも良い結果が出た。
+            知識は入ったけど命令にはうまく従えないため、Instruction-Tuningが必要。通常は「指示→答え」のペアをたくさん作って学習する必要があり大変なので「モデルマージ」を行うことでそのかわりとした。結果、英語生成の可能性が上がり性能低下することもあるらしい。日本語が足を引っ張ってるという考察だった。
+            日本語のデータセットの大切さを感じた。</p>
+      </div>
+
+              <div class="mb-4">
+          <h3 class="text-base md:text-lg font-semibold mb-1">An AI-Powered Interactive Cognitive Training System Scheme for Older Adults</h3>
+          <p><strong>概要、気になった理由、感想：</strong>AI-ICTという高齢者の認知トレーニングシステムだった。ナレッジベースでトレーニング問題の構造（難易度とか項目とか）を決定し、LLMを使って問題生成するという流れだった。高齢者が楽しみながら個別最適化されたトレーニングを受けられるようにしたいらしい。</p>
+        </div>
+
+        <div class="mb-4">
+          <h3 class="text-base md:text-lg font-semibold mb-1">Evaluating Reranking of Accounting Knowledge Web Pages by LLMs towards RAG based QA</h3>
+          <p><strong>概要、気になった理由、感想：</strong>（後日追記予定）</p>
+        </div>
+    </div>
+  </div>
+</body>
+
+</html>
