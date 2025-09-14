@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width， initial-scale=1.0" />
+  <title>FIT2025 参加報告</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+
+
+<body class="bg-gray-50 p-5 md:p-10">
+  <div class="max-w-5xl mx-auto bg-white rounded-xl shadow-md overflow-hidden p-5 md:p-10">
+    <header class="mb-8">
+      <h1 class="text-2xl md:text-3xl font-bold mb-3">FIT2025 参加報告</h1>
+      <p class="text-gray-600">情報システムソサイエティ(ISS)／ヒューマンコミュニケーショングループ(HCG) ／情報処理学会</p>
+      <p class="text-gray-600">参加者：山崎紘介・川島壮生・櫻井崇貴</p>
+      <p class="text-gray-600">開催期間：2025年9月3日(水)〜9月5日(金)</p>
+    </header>
+
+    <section class="mb-8">
+      <h2 class="text-xl md:text-2xl font-bold mb-3">はじめに</h2>
+      <p><span class="font-semibold">FIT2025</span>（Forum on Information Technology）に白松研究室から3人のメンバーが参加しました！幅広いセッションや研究会に参加し，対話システムやRAG，HCI分野の最新動向を収集しました.こちらはその参加報告となります．</p>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-xl md:text-2xl font-bold mb-4">イベント概要</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="p-4 rounded-lg bg-gray-50 border">
+          <h3 class="text-lg font-semibold mb-2">主な併催イベント</h3>
+          <ul class="list-disc list-inside space-y-1 text-gray-800">
+            <li>HCI研究会（ISS-HCI）</li>
+            <li>コンピュテーション研究会（ISS-COMP）</li>
+            <li>アルゴリズム研究会（IPSJ-AL）</li>
+            <li>教育工学研究会（ISS-ET）</li>
+            <li>ゲーム情報学研究会（IPSJ-GI）</li>
+            <li>医用画像研究会（ISS-MI）</li>
+            <li>ほか多数</li>
+          </ul>
+        </div>
+        <div class="p-4 rounded-lg bg-gray-50 border">
+          <h3 class="text-lg font-semibold mb-2">全体規模</h3>
+          <ul class="list-disc list-inside space-y-1 text-gray-800">
+            <li>一般発表：約600件</li>
+            <li>選奨発表：約80件</li>
+            <li>トップカンファレンスセッション等も開催</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-8">
+    <h2 class="text-xl md:text-2xl font-bold mb-4">発表講演</h2>
+	  <div class="space-y-6">
+	    <article class="p-5 bg-gray-50 border rounded-lg">
+        <h3 class="text-lg md:text-xl font-semibold">GROWモデルに基づく⽬標達成にフォーカスしたコーチング対話システム (CJ-006)</h3>
+        <h3 class="text-lg font-semibold mb-2">概要</h3>
+        <p class="mt-2">近年，キャリア形成といった場面で自身がやりたいことを具体化し，行動へとサポートすることが重要となってきている．これらはコーチングとしてキャリア面談や相談窓口で実践されてきているが，人材不足といった面からLLMを用いた対話システムに置き換える動きも見られる．他方，LLMを用いた対話システムでは，自由度の高い応答を可能とする反面，対話が枝葉掘りになってしまい行動支援まで至らない問題が生じていた．そこで，ジョン・ウィットモアが考案したGROWモデルの構造をプロンプトとして与え，対話を構造的に進めることにより，対話システムにおける目標達成支援タスクの精度向上・効率化を狙った．結果として，伴走感や目標達成に向けての行動促進に良い影響を与える一方，各フェーズの精度や個別化に課題が残った．</p>
+        <h3 class="text-lg font-semibold mb-2">感想</h3>
+          初めての学会参加でとても緊張しました．割り当てられたセッションでは周りの面白い発表に圧倒されながらなんとか終わらせることで精一杯だったので次回はもっと準備して臨みたいです．各セッションで独創性のあるアイデアや深い考察が発表されていて，併設研究会でも面白い取り組みがされていたのでFITだけじゃなくて，併設の方も興味があれば見て頂きたいと思いました．（山崎）
+      </article>
+
+	    <article class="p-5 bg-gray-50 border rounded-lg">
+        <h3 class="text-lg md:text-xl font-semibold">動的プロンプト更新を用いた顧客インタビュートレーニングシステムにおける情報一貫性の検証と応答パターン分析 (F-032)</h3>
+        <h3 class="text-lg font-semibold mb-2">概要</h3>
+	      <p class="mt-2">
+          近年，大規模言語モデル（LLM）は単なる情報提供にとどまらず，人間らしい対話主体として教育，企業研修，カスタマーサポート，心理支援など多様な分野での活用が進んでいる．そのため，正確な情報提供だけでなく，自然な応答，共感，柔軟な振る舞いが求められる．
+          しかし，従来の静的プロンプト設計には限界があり，対話の文脈変化に応じた柔軟な応答は困難である．これを克服するため，研究者らは対話進行に応じてプロンプトを動的に更新する手法を開発した．この手法では，情報を段階的に追加し，ユーザの質問を通じて深層の情報が徐々に明らかになる構造を設計した．実験では，静的手法に比べ，質問数や深掘りの度合いが大幅に増加し，訓練効果が高まることが確認された．
+          しかし，プロンプトに新しい情報が追加されると，過去の発話内容と食い違う「外的矛盾」が生じやすい．人間は自然に発言を修正・更新できるが，LLMは矛盾処理戦略を持たないため，不自然な応答や一貫性の欠如につながる．この問題はユーザの信頼性を損ね，教育・医療・福祉といった応用分野で重大な課題となる．
+          本研究は，外的矛盾に直面した際のLLMの応答特性を解明することを目的とした．具体的には，GPT，Claude，Geminiなど主要モデルを対象に，ペルソナを設定した実験を通じて，(1) 矛盾の認識の有無，(2) 新情報と過去発話の優先度判断，という2観点から分析を行う実験設計を提案した．
+        </p>
+	      <h3 class="text-lg font-semibold mb-2">感想</h3>
+        昨年のFIT2024ではヤングリサーチャー賞を受賞し，本大会にて表彰をしていただきました．
+        ４回目の参加となった今年のFITでも，多くの方が多岐にわたる研究を発表されており，非常に有意義な時間となりました．
+        学生として参加できるのは今年が最後となりました．多くのことを学ばせていただいたこの大会に感謝しています．
+        今学生の方は，構想レベルの研究でもどしどし参加してください！意見をいただく良い機会になると思います！（川島）
+      </article>
+
+	  <article class="p-5 bg-gray-50 border rounded-lg">
+          <h3 class="text-lg md:text-xl font-semibold">多視点議論を促す地政学的報道スタンス可視化・情報推薦エージェントの提案 (J-043)</h3>
+          <h3 class="text-lg font-semibold mb-2">概要</h3>
+	      <p class="mt-2">
+          国際的なニューストピックに対する報道は，国や地域によってスタンスや論調が大きく異なることがある．こうした違いに無自覚なまま情報に接し続けることは，個人の認知や意見形成にバイアスや誤解をもたらすおそれがある．本研究では，大規模言語モデル（LLM）を活用し，複数言語で各国の報道内容を取得・分析することで，報道フレームごとのスタンスの違いを可視化し，ユーザが多視点的に理解を深められるよう支援するシステムを試作した．提案システムは，(1) 各国のニュース記事をもとに，5つのニュースフレーム（経済的影響，対立，人間的関心，道徳，責任の所在）ごとにスタンス（賛成・反対・中立）を判定し，その分布を地図やグラフで俯瞰的に可視化するエージェントと，(2) 同じニュースデータを活用してユーザの質問に応じた深掘り情報を対話的に推薦するエージェントから構成される．実験の結果からは，スタンスの極端化抑制やバイアスの認知，多視点理解の促進に対して一定の傾向が確認された．統計的に有意な差は確認されなかったものの，効果量の観点からは有望な傾向が示された．また，情報の可視化や有用性に関しては一定の評価が得られた一方で，情報量やアクセス性，インタフェースの簡潔さなどに関する改善の余地も指摘されており，今後の設計上の課題として位置づけられる．
+        </p>
+	      <h3 class="text-lg font-semibold mb-2">感想</h3>
+        自分ではうまく発表できたつもりだったが，座長の方にいまいち伝わっていない部分があり，反省点が残る発表となった．聴講は，LLMやRAGを中心に興味がある発表が多数あったため，有意義なものとなった．自分があまり詳しくない分野に関しても触れることができ，現在どのような研究が盛んなのか，どのような手法があるのかなどについても簡単に知ることができてよかった．知識のアップデートのためにも定期的に参加することは重要だと思った．(櫻井)
+    </article>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-xl md:text-2xl font-bold mb-4">気になった講演・研究</h2>
+      <div class="space-y-6">
+        <article class="p-5 bg-gray-50 border rounded-lg">
+          <h3 class="text-lg md:text-xl font-semibold">個人の嗜好に基づき記憶が曖昧になる人間らしい雑談対話システム (E-065)</h3>
+          <p class="mt-2">エビングハウスの忘却曲線を参考に，興味の薄い情報を早く忘却する「人間らしい」記憶劣化を対話システムに導入．96時間後の応答が意味不明になるなど課題も観測．</p>
+          <ul class="list-disc list-inside mt-2 text-gray-800">
+            <li>要約が短すぎて元情報を失いがち</li>
+            <li>曖昧化レベルが粗く，重要語にもノイズが乗る</li>
+          </ul>
+        </article>
+
+        <article class="p-5 bg-gray-50 border rounded-lg">
+          <h3 class="text-lg md:text-xl font-semibold">DB構造化によるRAG最適化 (E-015)</h3>
+          <p class="mt-2">Webページ(HTML)をYAMLで構造化しベクトルDBへ登録．チャンク分割に比べトークン数を削減しつつ精度向上を報告．一方，単純なキーワード質問には弱さ．</p>
+        </article>
+
+        <article class="p-5 bg-gray-50 border rounded-lg">
+          <h3 class="text-lg md:text-xl font-semibold">小説テキストを用いた雑談対話コーパスの自動構築 (E-063)</h3>
+          <p class="mt-2">地の文をBERTで解析して発話応答関係を推定・連結することで日本語コーパス作成のための会話文を大量に抽出する．話者特定は地の文や口調から約70%の精度．</p>
+        </article>
+
+        <article class="p-5 bg-gray-50 border rounded-lg">
+          <h3 class="text-lg md:text-xl font-semibold">個人の経歴情報に基づく面接質問生成 (E-064)</h3>
+          <p class="mt-2">エントリーシートなどの経歴からSTAR法に基づく深掘り質問を自動生成．寄り添い度や関連性の改善を報告．抽出と質問設計の最適化が今後の課題．</p>
+        </article>
+
+        <article class="p-5 bg-gray-50 border rounded-lg">
+          <h3 class="text-lg md:text-xl font-semibold">RAGとして与えるデータベース構造の一考察 (F-029)</h3>
+          <p class="mt-2">FAQをRAGで扱う際のデータ構造比較．小規模はJSON，大規模はCSVが良好という示唆．メタデータ設計の影響可能性も指摘された．</p>
+        </article>
+      </div>
+    </section>
+    
+    <section class="mb-8">
+      <h2 class="text-xl md:text-2xl font-bold mb-4">おわりに</h2>
+      <p class="mt-2">
+        今回のFIT2025は非常に有意義な時間となりました．特に対話システムやRAGだけでなく，BERTや感情分析など幅広いセッションで構成されていて，普段触れていない研究についての動向や新たな知見を頂くことができたと思います．今回，一般セッションでは「情報の抽出」が課題にあげられており，データをLLMにどう与えていくかが現状の課題のように感じました．一方，トップカンファレンスでは，「最適輸送」が多くの研究で取り上げられており，今後の研究でも追っていく必要があると感じました．全体を通して，意見の発信であったり，アイデアを共有したりする良い場になるので，来年度も参加目指して研究を進めていこうと思います．
+      </p>
+    </section>
+
+    <footer class="text-sm text-gray-500">
+      <p>※ 本レポートはFIT2025参加報告スライドの内容をもとに再構成しています．</p>
+      <p class="mt-2">編集者：山崎紘介</p>
+    </footer>
+  </div>
+</body>
+
+</html>
