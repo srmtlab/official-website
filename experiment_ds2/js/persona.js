@@ -1,5 +1,8 @@
 // js/persona.js
 function showPersona() {
+    // 対話履歴を復元する
+    restoreDialogHistory();
+    
     // ローカルストレージから "persona" の値を取得
     var selectedPersonas = localStorage.getItem('persona');
 
@@ -34,4 +37,35 @@ function showPersona() {
             personaContainer.appendChild(personaElement);  // 対話をコンテナの最後に移動
         }
     });
+}
+
+// 対話履歴を復元する
+function restoreDialogHistory() {
+    // selectedDialogsがグローバルスコープにあることを確認
+    if (typeof selectedDialogs === 'undefined' || selectedDialogs.length === 0) {
+        // localStorageから復元を試みる
+        const savedDialogs = localStorage.getItem('selectedDialogs');
+        if (savedDialogs) {
+            selectedDialogs = JSON.parse(savedDialogs);
+        } else {
+            console.log("No dialog history to restore");
+            return;
+        }
+    }
+    
+    const dialogContainer = document.getElementById('dialog-container');
+    
+    // すべての対話を表示
+    selectedDialogs.forEach(dialogId => {
+        const dialogElement = document.getElementById(dialogId);
+        if (dialogElement) {
+            dialogElement.classList.remove('hidden');
+            // 既にコンテナに追加されていない場合のみ追加
+            if (!dialogContainer.contains(dialogElement)) {
+                dialogContainer.appendChild(dialogElement);
+            }
+        }
+    });
+    
+    console.log("Dialog history restored");
 }

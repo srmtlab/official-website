@@ -36,6 +36,9 @@ function generateRandomDialogs() {
         selectedDialogs.push(dialogId);
     }
 
+    // selectedDialogsをlocalStorageに保存
+    localStorage.setItem('selectedDialogs', JSON.stringify(selectedDialogs));
+
     // すべての対話を非表示にする
     const allDialogs = document.querySelectorAll('[id^="dialog_"]');
     allDialogs.forEach(dialog => dialog.classList.add('hidden'));
