@@ -41,31 +41,47 @@ function showPersona() {
 
 // 対話履歴を復元する
 function restoreDialogHistory() {
-    // selectedDialogsがグローバルスコープにあることを確認
-    if (typeof selectedDialogs === 'undefined' || selectedDialogs.length === 0) {
-        // localStorageから復元を試みる
-        const savedDialogs = localStorage.getItem('selectedDialogs');
-        if (savedDialogs) {
-            selectedDialogs = JSON.parse(savedDialogs);
-        } else {
-            console.log("No dialog history to restore");
-            return;
-        }
+    // localStorageからselectedDialogsを取得
+    const savedDialogs = localStorage.getItem('selectedDialogs');
+    if (!savedDialogs) {
+        console.log("No dialog history to restore");
+        return;
+    }
+    
+    let selectedDialogs;
+    try {
+        selectedDialogs = JSON.parse(savedDialogs);
+    } catch (e) {
+        console.error("Error parsing selectedDialogs:", e);
+        return;
+    }
+    
+    if (!Array.isArray(selectedDialogs) || selectedDialogs.length === 0) {
+        console.log("No valid dialog history to restore");
+        return;
     }
     
     const dialogContainer = document.getElementById('dialog-container');
+    if (!dialogContainer) {
+        console.error("Dialog container not found");
+        return;
+    }
     
     // すべての対話を表示
     selectedDialogs.forEach(dialogId => {
         const dialogElement = document.getElementById(dialogId);
         if (dialogElement) {
+            // hiddenクラスを削除して表示
             dialogElement.classList.remove('hidden');
-            // 既にコンテナに追加されていない場合のみ追加
-            if (!dialogContainer.contains(dialogElement)) {
+            
+            // コンテナに追加（既に追加されている場合は移動）
+            if (dialogElement.parentNode !== dialogContainer) {
                 dialogContainer.appendChild(dialogElement);
             }
+        } else {
+            console.warn(`Dialog element not found: ${dialogId}`);
         }
     });
     
-    console.log("Dialog history restored");
+    console.log("Dialog history restored:", selectedDialogs);
 }

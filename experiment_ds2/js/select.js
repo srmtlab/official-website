@@ -68,6 +68,14 @@ function showNextDialog() {
             dialogElement.classList.remove('hidden');
             dialogContainer.appendChild(dialogElement);
             
+            // 対話の開始部分（h2タグ）にスクロール
+            const dialogTitle = dialogElement.querySelector('h2');
+            if (dialogTitle) {
+                setTimeout(() => {
+                    dialogTitle.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            }
+            
             // 少し待ってからボタンを追加（DOMが更新された後）
             setTimeout(() => {
                 addNextButton(dialogElement, currentDialogIndex);
@@ -110,8 +118,7 @@ function addNextButton(dialogElement, index) {
     button.textContent = index < selectedDialogs.length - 1 ? '次の対話へ' : 'すべての対話を完了';
     
     button.addEventListener('click', function() {
-        currentDialogIndex++;
-        showNextDialog();
+        showConfirmationDialog(index);
     });
     
     buttonContainer.appendChild(button);
@@ -124,6 +131,60 @@ function addNextButton(dialogElement, index) {
     } else {
         document.getElementById('dialog-container').appendChild(buttonContainer);
     }
+}
+
+// 確認ダイアログを表示
+function showConfirmationDialog(index) {
+    // 既存の確認ダイアログを削除
+    const existingDialog = document.getElementById('confirmation-dialog');
+    if (existingDialog) {
+        existingDialog.remove();
+    }
+    
+    // 確認ダイアログを作成
+    const dialogOverlay = document.createElement('div');
+    dialogOverlay.id = 'confirmation-dialog';
+    dialogOverlay.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+    
+    const dialogBox = document.createElement('div');
+    dialogBox.className = 'bg-white rounded-lg p-6 max-w-md mx-4 shadow-xl';
+    
+    const title = document.createElement('h3');
+    title.className = 'text-xl font-semibold mb-4 text-gray-800';
+    title.textContent = '確認';
+    
+    const message = document.createElement('p');
+    message.className = 'text-gray-700 mb-6';
+    message.textContent = '評価は終えましたか？はいを押すとこの対話は表示されなくなります。';
+    
+    const buttonContainer = document.createElement('div');
+    buttonContainer.className = 'flex justify-end space-x-3';
+    
+    const cancelButton = document.createElement('button');
+    cancelButton.className = 'px-4 py-2 bg-gray-300 text-gray-700 rounded hover:bg-gray-400 transition-colors';
+    cancelButton.textContent = 'いいえ';
+    cancelButton.addEventListener('click', function() {
+        dialogOverlay.remove();
+    });
+    
+    const confirmButton = document.createElement('button');
+    confirmButton.className = 'px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition-colors';
+    confirmButton.textContent = 'はい';
+    confirmButton.addEventListener('click', function() {
+        dialogOverlay.remove();
+        currentDialogIndex++;
+        showNextDialog();
+    });
+    
+    buttonContainer.appendChild(cancelButton);
+    buttonContainer.appendChild(confirmButton);
+    
+    dialogBox.appendChild(title);
+    dialogBox.appendChild(message);
+    dialogBox.appendChild(buttonContainer);
+    dialogOverlay.appendChild(dialogBox);
+    
+    document.body.appendChild(dialogOverlay);
 }
 
 // 「作業３を始める」ボタンを表示
