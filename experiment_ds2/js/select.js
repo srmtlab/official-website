@@ -68,14 +68,6 @@ function showNextDialog() {
             dialogElement.classList.remove('hidden');
             dialogContainer.appendChild(dialogElement);
             
-            // 対話の開始部分（h2タグ）にスクロール
-            const dialogTitle = dialogElement.querySelector('h2');
-            if (dialogTitle) {
-                setTimeout(() => {
-                    dialogTitle.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }, 100);
-            }
-            
             // 少し待ってからボタンを追加（DOMが更新された後）
             setTimeout(() => {
                 addNextButton(dialogElement, currentDialogIndex);
@@ -174,6 +166,10 @@ function showConfirmationDialog(index) {
         dialogOverlay.remove();
         currentDialogIndex++;
         showNextDialog();
+        // スクロールを確実に実行するため、少し待ってから実行
+        setTimeout(() => {
+            scrollToDialogStart();
+        }, 200);
     });
     
     buttonContainer.appendChild(cancelButton);
@@ -185,6 +181,39 @@ function showConfirmationDialog(index) {
     dialogOverlay.appendChild(dialogBox);
     
     document.body.appendChild(dialogOverlay);
+}
+
+// 対話の開始部分にスクロール
+function scrollToDialogStart() {
+    if (currentDialogIndex < selectedDialogs.length) {
+        const dialogId = selectedDialogs[currentDialogIndex];
+        const dialogElement = document.getElementById(dialogId);
+        
+        if (dialogElement) {
+            const dialogTitle = dialogElement.querySelector('h2');
+            if (dialogTitle) {
+                // 要素の位置を取得
+                const rect = dialogTitle.getBoundingClientRect();
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const targetY = rect.top + scrollTop - 20; // 20px上に余裕を持たせる
+                
+                window.scrollTo({
+                    top: targetY,
+                    behavior: 'smooth'
+                });
+            } else {
+                // h2が見つからない場合は、対話要素自体にスクロール
+                const rect = dialogElement.getBoundingClientRect();
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const targetY = rect.top + scrollTop - 20;
+                
+                window.scrollTo({
+                    top: targetY,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    }
 }
 
 // 「作業３を始める」ボタンを表示
