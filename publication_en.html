@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="jp">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -16,17 +16,17 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
     integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
-  <title>白松研究室</title>
+  <title>Shiramatsu Laboratory</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="名古屋工業大学 2号館A棟4階401A室">
-  <meta name="keywords" content="白松研究室,名工大,白松 俊,アクセス">
-  <meta name="author" content="白松研究室">
+  <meta name="description" content="Nagoya Institute of Technology, Building 2A, Room 401A">
+  <meta name="keywords" content="Shiramatsu Laboratory,NIT,Shun Shiramatsu,Publications">
+  <meta name="author" content="Shiramatsu Laboratory">
 </head>
 
 <body>
   <header>
     <nav id="header" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <span class="navbar-brand mb-0 h1 theme">白松研究室</span>
+      <span class="navbar-brand mb-0 h1 theme">Shiramatsu Laboratory</span>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -34,14 +34,14 @@
 
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-item nav-link" href="./index.html">トップ</a>
-          <a class="nav-item nav-link" href="./member.html">メンバー</a>
-          <a class="nav-item nav-link" href="./research.html">研究内容</a>
-          <a class="nav-item nav-link active" href="./publication.html">論文一覧</a>
-          <a class="nav-item nav-link" href="./theses.html">卒論・修論一覧</a>
-          <a class="nav-item nav-link" href="./access.html">アクセス</a>
-          <a class="nav-item nav-link" href="./link.html">リンク</a>
-          <a class="nav-item nav-link" href="./publication_en.html">English</a>
+          <a class="nav-item nav-link" href="./index.html">Top</a>
+          <a class="nav-item nav-link" href="./member.html">Members</a>
+          <a class="nav-item nav-link" href="./research.html">Research</a>
+          <a class="nav-item nav-link active" href="./publication_en.html">Publications</a>
+          <a class="nav-item nav-link" href="./theses.html">Theses</a>
+          <a class="nav-item nav-link" href="./access.html">Access</a>
+          <a class="nav-item nav-link" href="./link.html">Links</a>
+          <a class="nav-item nav-link" href="./publication.html">日本語</a>
         </div>
       </div>
     </nav>
@@ -50,8 +50,8 @@
   <main>
     <div id="masthead" class="jumbotron jumbotron-fluid">
       <div class="container container-fixed">
-        <h1>発表文献</h1>
-        <p class="masthead-description">白松研究室のメンバーの発表文献を掲載します。</p>
+        <h1>Publications</h1>
+        <p class="masthead-description">Publications by members of Shiramatsu Laboratory.</p>
       </div>
     </div>
 
@@ -59,22 +59,22 @@
       <div class="content-description">
         <div class="toc">
           <ul>
-            <li><a href="#journal">論文誌</a></li>
-            <li><a href="#intconf">国際会議</a></li>
-            <li><a href="#domconf">国内会議</a></li>
+            <li><a href="#journal">Journal Papers</a></li>
+            <li><a href="#intconf">International Conferences</a></li>
+            <li><a href="#domconf">Domestic (Japanese) Conferences</a></li>
           </ul>
         </div>
 
         <div class="container" id="journal">
-          <!-- ./publication/journal.htmlがここに読み込まれる -->
+          <!-- ./publication/en/journal.html is loaded here -->
         </div>
 
         <div class="container" id="intconf">
-          <!-- ./publication/intconf.htmlがここに読み込まれる -->
+          <!-- ./publication/intconf.html is loaded here (already in English) -->
         </div>
 
         <div class="container" id="domconf">
-          <!-- ./publication/domconf.htmlがここに読み込まれる -->
+          <!-- ./publication/en/domconf.html is loaded here -->
         </div>
 
       </div>
@@ -94,15 +94,15 @@
 
     function loadFiles() {
       const publications = [
-        { url: './publication/journal.html', elementId: 'journal' },
+        { url: './publication/en/journal.html', elementId: 'journal' },
         { url: './publication/intconf.html', elementId: 'intconf' },
-        { url: './publication/domconf.html', elementId: 'domconf' }
+        { url: './publication/en/domconf.html', elementId: 'domconf' }
       ];
 
       publications.forEach(pub => loadFile(pub.url, pub.elementId));
     }
 
-    // ページ読み込み時に外部ファイルを読み込む
+    // Load external files when the page loads
     window.onload = loadFiles;
 
   </script>
